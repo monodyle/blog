@@ -1,0 +1,28 @@
+---
+import Head from "#/libs/Head.astro";
+import Header from "#/libs/Header.astro";
+import Footer from "#/libs/Footer.astro";
+import consts from "#/consts";
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = consts.title, description = consts.description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <Head title={title} description={description} />
+    <script>
+      import "./router";
+    </script>
+  </head>
+  <body>
+    <Header title={title} />
+    <slot />
+    <Footer />
+  </body>
+</html>

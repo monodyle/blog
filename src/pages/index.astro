@@ -1,77 +1,66 @@
 ---
-import Head from "#/libs/Head.astro";
-import Header from "#/libs/Header.astro";
-import Footer from "#/libs/Footer.astro";
-import consts from "../consts";
+import Layout from "#/libs/Layout.astro";
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <Head title={consts.title} description={consts.description} />
-  </head>
-  <body>
-    <Header title={consts.title} />
-    <div class="container">
-      <div class="content">
-        <h3 class="title">bio</h3>
-        <div class="description">
-          <p>
-            my name is Minh &quot;Monody&quot; Le Hong. just a guy tends to be
-            handsome gradually over the years…
-          </p>
-          <p>
-            i was born a child of the mountains and forests, raised on the land
-            of sunny which named Central Highlands. should be i had to grow
-            vegetables and chickens, but now I go coding and design.
-          </p>
-        </div>
-      </div>
-      <div class="avatar">
-        <img
-          src="https://avatars.githubusercontent.com/u/30283022"
-          alt="avatar"
-        />
+<Layout>
+  <div class="container">
+    <div class="content">
+      <h3 class="title">bio</h3>
+      <div class="description">
+        <p>
+          my name is Minh &quot;Monody&quot; Le Hong. just a guy tends to be
+          handsome gradually over the years…
+        </p>
+        <p>
+          i was born a child of the mountains and forests, raised on the land of
+          sunny which named Central Highlands. should be i had to grow
+          vegetables and chickens, but now I go coding and design.
+        </p>
       </div>
     </div>
-    <Footer />
-    <style>
-      .container {
-        padding: 24px 32px;
-        border-radius: 8px;
-        border: 2px solid var(--foreground);
-        border-bottom-width: 4px;
-        border-right-width: 4px;
-        display: flex;
-        gap: 24px;
-        width: fit-content;
-        margin: 0 auto;
-      }
-      .content {
-        width: calc(100% - 128px - 24px);
-      }
-      .title {
-        font-weight: 600;
-        font-size: 24px;
-        margin-bottom: 16px;
-      }
-      .description {
-        line-height: 1.5;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-      }
-      .avatar {
-        width: 128px;
-        margin-left: auto;
-      }
-      .avatar img {
-        display: block;
-        border-radius: 8px;
-        border: 2px solid var(--foreground);
-        border-bottom-width: 4px;
-        border-right-width: 4px;
-      }
-    </style>
-  </body>
-</html>
+    <div class="avatar">
+      <img
+        src="https://avatars.githubusercontent.com/u/30283022"
+        alt="avatar"
+      />
+    </div>
+  </div>
+  <style>
+    .container {
+      padding: 24px 32px;
+      border-radius: 8px;
+      border: 2px solid var(--foreground);
+      border-bottom-width: 4px;
+      border-right-width: 4px;
+      display: flex;
+      gap: 24px;
+      width: fit-content;
+      margin: 0 auto;
+    }
+    .content {
+      width: calc(100% - 128px - 24px);
+    }
+    .title {
+      font-weight: 600;
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+    .description {
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .avatar {
+      width: 128px;
+      margin-left: auto;
+    }
+    .avatar img {
+      display: block;
+      border-radius: 8px;
+      border: 2px solid var(--foreground);
+      border-bottom-width: 4px;
+      border-right-width: 4px;
+    }
+  </style>
+</Layout>
