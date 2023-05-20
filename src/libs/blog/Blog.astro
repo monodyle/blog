@@ -6,17 +6,24 @@ import "#/styles/prose.css";
 import "#/styles/starrynight.css";
 
 import Layout from "../Layout.astro";
+import consts from "#/consts";
 
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, date, thumbnail, tags } = Astro.props;
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title + " - " + consts.title} description={description}>
   <main>
     <article>
       <div class="header">
-        {thumbnail && <img class="thumbnail" src={thumbnail} alt={title} />}
+        {
+          thumbnail && (
+            <div class="thumbnail">
+              <img src={thumbnail} alt={title} loading="lazy" />
+            </div>
+          )
+        }
         <div class="tags">
           <small class="date">
             {
@@ -38,11 +45,22 @@ const { title, description, date, thumbnail, tags } = Astro.props;
 
 <style>
   .thumbnail {
+    position: relative;
     margin: 0 -24px 24px;
     border-radius: 8px;
     display: block;
     max-width: unset;
     width: calc(100% + 48px);
+    padding-top: 52.5%;
+    overflow: hidden;
+  }
+  .thumbnail img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    object-fit: cover;
+    object-position: center;
   }
   .prose {
     padding: 0 24px;

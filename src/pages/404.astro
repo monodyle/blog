@@ -1,0 +1,25 @@
+---
+import Layout from "#/libs/Layout.astro";
+---
+
+<Layout>
+  <div class="container">
+    <div class="text">not found...</div>
+  </div>
+</Layout>
+
+<style>
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: calc(100vh - 96px - 84px - 24px * 4);
+  }
+  .text {
+    text-align: center;
+    font-size: 4em;
+    font-weight: 600;
+    color: var(--light-2)
+  }
+</style>

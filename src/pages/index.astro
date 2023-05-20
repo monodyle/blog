@@ -62,5 +62,17 @@ import Layout from "#/libs/Layout.astro";
       border-bottom-width: 4px;
       border-right-width: 4px;
     }
+    @media screen and (max-width: 768px) {
+        .container {
+          flex-direction: column-reverse;
+          align-items: center;
+        }
+        .avatar {
+          margin: 0 auto;
+        }
+        .content {
+          width: 100%;
+        }
+      }
   </style>
 </Layout>
