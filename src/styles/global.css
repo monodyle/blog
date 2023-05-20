@@ -1,13 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap');
 @import "./reset.css";
-
 :root {
-  --dimmed: #57534e;
-  --foreground: #292524;
-  --foreground-rgb: 41, 37, 36;
-  --background: #fff7ed;
-  --background-rgb: 255, 247, 237;
-  --light-2: #eee6de;
+  --color-1: #2F2829;
+  --color-2: #5D5251;
+  --color-3: #8C7F79;
+  --color-4: #BAAFA2;
+  --color-5: #E8E0CB;
+  --color-6: #EDE4D5;
+  --color-7: #F2E9DF;
+  --color-8: #F6EFEA;
+  --color-9: #FBF6F4;
+  --foreground: var(--color-1);
+  --foreground-rgb: 47, 40, 41;
+  --background: var(--color-9);
+  --background-rgb: 251, 246, 244;
 }
 
 *,

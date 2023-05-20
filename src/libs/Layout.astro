@@ -35,7 +35,6 @@ const { title = consts.title, description = consts.description } = Astro.props;
         display: flex;
         align-items: center;
         width: 100%;
-        max-width: var(--max-width);
         margin: 0 auto 24px;
         padding: 24px;
       }
@@ -58,7 +57,7 @@ const { title = consts.title, description = consts.description } = Astro.props;
       }
       .logo div span {
         font-size: 12px;
-        color: var(--dimmed);
+        color: var(--color-2);
       }
       .links {
         margin-left: auto;
@@ -83,17 +82,16 @@ const { title = consts.title, description = consts.description } = Astro.props;
       }
       footer {
         width: 100%;
-        max-width: var(--max-width);
         margin: 24px auto;
         padding: 24px;
         text-align: center;
         justify-content: center;
         font-size: 12px;
-        color: var(--dimmed);
+        color: var(--color-2);
       }
       footer a {
         font-weight: 500;
-        box-shadow: inset 0 -0.3em 0 0 #f8dcca;
+        box-shadow: inset 0 -0.3em 0 0 var(--color-5);
       }
       @media screen and (max-width: 768px) {
         header {

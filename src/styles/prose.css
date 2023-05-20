@@ -79,7 +79,7 @@
   max-width: 100%;
   box-sizing: content-box;
   border-radius: 4px;
-  background-color: var(--dimmed);
+  background-color: var(--color-2);
 }
 
 .prose code,
@@ -230,10 +230,10 @@
   font-family: monospace;
   line-height: 10px;
   vertical-align: middle;
-  background-color: rgba(var(--foreground-rgb), .025);
-  border: solid 1px rgba(var(--foreground-rgb), 0.1);
+  background-color: var(--color-8);
+  border: solid 1px var(--color-4);
   border-radius: 6px;
-  box-shadow: 0 1px 0 rgba(var(--foreground-rgb), 0.1);
+  box-shadow: 0 1px 0 var(--color-4);
 }
 
 .prose h1,
@@ -272,7 +272,7 @@
 .prose h6 {
   font-weight: 600;
   font-size: 0.85em;
-  color: var(--dimmed);
+  color: var(--color-2);
 }
 
 .prose p {
@@ -282,9 +282,10 @@
 
 .prose blockquote {
   margin: 0;
-  padding: 0 1em;
-  color: var(--dimmed);
-  border-left: 0.25em solid var(--light-2);
+  padding: 0.5em 2em;
+  font-size: 1.25em;;
+  color: var(--color-2);
+  border-left: 0.25em solid var(--color-6);
 }
 
 .prose ul,
@@ -510,7 +511,7 @@
 .prose table th,
 .prose table td {
   padding: 6px 13px;
-  border: 1px solid var(--light-2);
+  border: 1px solid var(--color-6);
 }
 
 .prose table tr {
@@ -518,7 +519,7 @@
 }
 
 .prose table tr:nth-child(2n) {
-  background-color: rgba(var(--foreground-rgb), .025);
+  background-color: var(--color-8);
 }
 
 .prose table img {
@@ -633,7 +634,7 @@
   margin: 0;
   font-size: 85%;
   white-space: break-spaces;
-  background-color: var(--light-2);
+  background-color: var(--color-7);
   border-radius: 6px;
 }
 
@@ -678,7 +679,7 @@
   padding: 16px;
   font-size: 1rem;
   line-height: normal;
-  background-color: var(--light-2);
+  background-color: var(--color-7);
   border-radius: 0 0 6px 6px;
 }
 
