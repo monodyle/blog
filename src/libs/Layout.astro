@@ -1,8 +1,18 @@
 ---
 import Head from "#/libs/Head.astro";
-import Header from "#/libs/Header.astro";
-import Footer from "#/libs/Footer.astro";
 import consts from "#/consts";
+
+import Blog from "./icons/Blog.astro";
+
+const { pathname } = Astro.url;
+
+const links = [
+  {
+    path: "/blog",
+    label: "Blog",
+    icon: Blog,
+  },
+];
 
 export interface Props {
   title?: string;
@@ -19,10 +29,115 @@ const { title = consts.title, description = consts.description } = Astro.props;
     <script>
       import "./router";
     </script>
+
+    <style>
+      header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: var(--max-width);
+        margin: 0 auto 24px;
+        padding: 24px;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .logo img {
+        width: 48px;
+        border-radius: 100%;
+      }
+      .logo div {
+        display: flex;
+        flex-direction: column;
+      }
+      .logo div strong {
+        font-size: 24px;
+        line-height: 24px;
+      }
+      .logo div span {
+        font-size: 12px;
+        color: var(--dimmed);
+      }
+      .links {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0 14px;
+        line-height: 40px;
+        font-weight: 600;
+        border-radius: 8px;
+      }
+      .link.active {
+        background-color: #eee6de;
+      }
+      .icon {
+        width: 18px;
+      }
+      footer {
+        width: 100%;
+        max-width: var(--max-width);
+        margin: 24px auto;
+        padding: 24px;
+        text-align: center;
+        justify-content: center;
+        font-size: 12px;
+        color: var(--dimmed);
+      }
+      footer a {
+        font-weight: 500;
+        box-shadow: inset 0 -0.3em 0 0 #f8dcca;
+      }
+    </style>
   </head>
   <body>
-    <Header title={title} />
+    <header>
+      <a href="/" class="logo">
+        <img src="/assets/me.png" alt="logo" />
+        <div>
+          <strong>{consts.title}</strong>
+          <span>{consts.description}</span>
+        </div>
+      </a>
+      <nav class="links">
+        {
+          links.map((link) => {
+            const isActive = pathname.replace(/\/$/, "").startsWith(link.path);
+            return (
+              <a href={link.path} class:list={["link", { active: isActive }]}>
+                <link.icon
+                  style={isActive ? "solid" : "outline"}
+                  class="icon"
+                />{" "}
+                {link.label}
+              </a>
+            );
+          })
+        }
+      </nav>
+    </header>
+
     <slot />
-    <Footer />
+
+    <footer>
+      hello, here the monody&#39;s space!
+      <br />
+      you can
+      <a
+        href="https://ko-fi.com/monodyle"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        buy me a coffee
+      </a>
+      if you feel enjoy this blog.
+    </footer>
   </body>
 </html>
