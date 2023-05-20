@@ -1,15 +1,26 @@
 ---
-import Blog from '#/libs/blog/Blog.astro';
-import { getEntry } from 'astro:content';
+import Blog from "#/libs/blog/Blog.astro";
+import { getCollection, getEntry } from "astro:content";
 
-const { slug } = Astro.params
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blog");
+  return blogEntries.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+
+const post = Astro.props;
+const { Content } = await post.render();
+
+/* const { slug } = Astro.params
 if (slug === undefined)
   throw new Error('eh?')
 
 const post = await getEntry("blog", slug)
 if (post === undefined) return Astro.redirect("/404");
 
-const { Content } = await post.render()
+const { Content } = await post.render() */
 ---
 
 <Blog {...post.data}>

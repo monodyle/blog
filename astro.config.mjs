@@ -12,7 +12,7 @@ import rehypeKatex from "rehype-katex";
 import rehypeToc from "rehype-toc";
 import rehypeDocument from "rehype-document";
 import rehypeStringify from "rehype-stringify";
-import cloudflare from "@astrojs/cloudflare";
+// import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
@@ -38,9 +38,10 @@ export default defineConfig({
       [rehypeStringify, { allowDangerousHtml: true }],
     ],
   },
-  experimental: {
-    hybridOutput: true
-  },
-  output: "hybrid",
-  adapter: cloudflare(),
+  output: "static",
+  // experimental: {
+  //   hybridOutput: true
+  // },
+  // output: "hybrid",
+  // adapter: cloudflare(),
 });
