@@ -1,6 +1,7 @@
 ---
-import { CollectionEntry, getCollection } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro';
+import Blog from '#/libs/blog/Blog.astro';
+import { parseMarkdown } from '#/libs/blog/markdown/parse';
+import { CollectionEntry,getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -9,13 +10,14 @@ export async function getStaticPaths() {
 		props: post,
 	}));
 }
+
 type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
-const { Content } = await post.render();
+const { body } = post
+const content = await parseMarkdown(body)
 ---
 
-<BlogPost {...post.data}>
-	<h1>{post.data.title}</h1>
-	<Content />
-</BlogPost>
+<Blog {...post.data}>
+	<div set:html={content} />
+</Blog>

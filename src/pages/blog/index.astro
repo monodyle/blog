@@ -1,54 +1,83 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
+import { getCollection } from "astro:content";
+import Head from "#/libs/Head.astro";
+import Header from "#/libs/Header.astro";
+import Footer from "#/libs/Footer.astro";
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+const posts = (await getCollection("blog")).sort(
+  (a, b) => a.data.date.valueOf() - b.data.date.valueOf()
 );
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			ul {
-				list-style-type: none;
-				padding: unset;
-			}
-			ul li {
-				display: flex;
-			}
-			ul li :global(time) {
-				flex: 0 0 130px;
-				font-style: italic;
-				color: #595959;
-			}
-			ul li a:visited {
-				color: #8e32dc;
-			}
-		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<FormattedDate date={post.data.pubDate} />
-								<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <Head />
+    <style>
+      .posts {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        padding: 24px;
+      }
+      .post {
+        display: flex;
+        flex-direction: column;
+      }
+      .meta {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        color: var(--dimmed);
+      }
+      .tags {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+      }
+      .tag {
+        border-radius: 4px;
+        display: block;
+        padding: 2px 4px;
+        background-color: #eee6de;
+      }
+      .title {
+        font-size: 18px;
+        font-weight: 600;
+      }
+      .brief {
+        color: var(--dimmed);
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <div class="posts">
+      {
+        posts.map((post) => (
+          <a href={`/blog/${post.slug}`}>
+            <div class="post">
+              <div class="meta">
+                <span class="date">
+                  {new Intl.DateTimeFormat("en-US", {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  }).format(post.data.date)}
+                </span>
+                <div class="tags">
+                  {post.data.tags?.map((tag) => (
+                    <span class="tag">#{tag}</span>
+                  ))}
+                </div>
+              </div>
+              <div class="title">{post.data.title}</div>
+              <p class="brief">{post.data.description}</p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+    <Footer />
+  </body>
 </html>

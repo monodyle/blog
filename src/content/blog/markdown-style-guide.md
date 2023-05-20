@@ -1,8 +1,8 @@
 ---
 title: "Markdown Style Guide"
 description: "Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro."
-pubDate: "Jul 01 2022"
-heroImage: "/placeholder-hero.jpg"
+date: "Jul 01 2022"
+thumbnail: "/placeholder-hero.jpg"
 ---
 
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
@@ -39,7 +39,7 @@ The blockquote element represents content that is quoted from another source, op
 
 #### Blockquote without attribution
 
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
+> Tiam, ad mint andaepu dandae nostion secatur sequo quae.
 > **Note** that you can use _Markdown syntax_ within a blockquote.
 
 #### Blockquote with attribution
@@ -54,10 +54,13 @@ The blockquote element represents content that is quoted from another source, op
 | Italics   | Bold     | Code   |
 | --------- | -------- | ------ |
 | _italics_ | **bold** | `code` |
+| _italics_ | **bold** | `code` |
+| _italics_ | **bold** | `code` |
+
 
 ## Code Blocks
 
-```html
+```html {1-3}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -68,6 +71,13 @@ The blockquote element represents content that is quoted from another source, op
     <p>Test</p>
   </body>
 </html>
+```
+
+```sh prompt{1,3}
+curl localhost:8080/actuator/health
+{"status":"UP"}
+curl localhost:8080/greeter?name=Anya
+Hello, Anya!
 ```
 
 ## List Types

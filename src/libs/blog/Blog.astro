@@ -1,0 +1,77 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Head from "../Head.astro";
+import Header from "../Header.astro";
+import Footer from "../Footer.astro";
+
+import "#/styles/prose.css";
+import "#/styles/starrynight.css";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, description, date, thumbnail, tags } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <Head title={title} description={description} />
+    <style>
+      .thumbnail {
+        margin: 0 -24px 24px;
+        border-radius: 8px;
+        display: block;
+        max-width: unset;
+        width: calc(100% + 48px);
+      }
+      .prose {
+        padding: 0 24px;
+      }
+      .header {
+        padding: 0 24px;
+        margin-bottom: 48px;
+      }
+      .tags {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+      }
+      .tag {
+        border-radius: 4px;
+        display: block;
+        padding: 2px 4px;
+        background-color: #eee6de;
+      }
+      .date {
+        margin-inline-end: 8px;
+        color: var(--dimmed);
+      }
+    </style>
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <article>
+        <div class="header">
+          {thumbnail && <img class="thumbnail" src={thumbnail} alt={title} />}
+          <div class="tags">
+            <small class="date">
+              {
+                new Intl.DateTimeFormat("en-US", {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                }).format(date)
+              }
+            </small>
+            {tags?.map((tag) => <small class="tag">{tag}</small>)}
+          </div>
+          <h1 class="title">{title}</h1>
+        </div>
+      </article>
+      <div class="prose"><slot /></div>
+    </main>
+
+    <Footer />
+  </body>
+</html>

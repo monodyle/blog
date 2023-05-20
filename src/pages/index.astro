@@ -1,50 +1,77 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Head from "#/libs/Head.astro";
+import Header from "#/libs/Header.astro";
+import Footer from "#/libs/Footer.astro";
+import consts from "../consts";
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <Head title={consts.title} description={consts.description} />
+  </head>
+  <body>
+    <Header title={consts.title} />
+    <div class="container">
+      <div class="content">
+        <h3 class="title">bio</h3>
+        <div class="description">
+          <p>
+            my name is Minh &quot;Monody&quot; Le Hong. just a guy tends to be
+            handsome gradually over the years…
+          </p>
+          <p>
+            i was born a child of the mountains and forests, raised on the land
+            of sunny which named Central Highlands. should be i had to grow
+            vegetables and chickens, but now I go coding and design.
+          </p>
+        </div>
+      </div>
+      <div class="avatar">
+        <img
+          src="https://avatars.githubusercontent.com/u/30283022"
+          alt="avatar"
+        />
+      </div>
+    </div>
+    <Footer />
+    <style>
+      .container {
+        padding: 24px 32px;
+        border-radius: 8px;
+        border: 2px solid var(--foreground);
+        border-bottom-width: 4px;
+        border-right-width: 4px;
+        display: flex;
+        gap: 24px;
+        width: fit-content;
+        margin: 0 auto;
+      }
+      .content {
+        width: calc(100% - 128px - 24px);
+      }
+      .title {
+        font-weight: 600;
+        font-size: 24px;
+        margin-bottom: 16px;
+      }
+      .description {
+        line-height: 1.5;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .avatar {
+        width: 128px;
+        margin-left: auto;
+      }
+      .avatar img {
+        display: block;
+        border-radius: 8px;
+        border: 2px solid var(--foreground);
+        border-bottom-width: 4px;
+        border-right-width: 4px;
+      }
+    </style>
+  </body>
 </html>
