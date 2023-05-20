@@ -4,7 +4,7 @@ import Layout from "#/libs/Layout.astro";
 import consts from "#/consts";
 
 const posts = (await getCollection("blog")).sort(
-  (a, b) => a.data.date.valueOf() - b.data.date.valueOf()
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
 ---
 
@@ -29,7 +29,7 @@ const posts = (await getCollection("blog")).sort(
               </div>
             </div>
             <div class="title">{post.data.title}</div>
-            <p class="brief">{post.data.description}</p>
+            <p class="brief">{post.data.excerpt}</p>
           </div>
         </a>
       ))

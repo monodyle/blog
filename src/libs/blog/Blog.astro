@@ -10,17 +10,17 @@ import consts from "#/consts";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, date, thumbnail, tags } = Astro.props;
+const { title, excerpt, date, image, tags } = Astro.props;
 ---
 
-<Layout title={title + " - " + consts.title} description={description}>
+<Layout title={title + " - " + consts.title} description={excerpt}>
   <main>
     <article>
       <div class="header">
         {
-          thumbnail && (
+          image && (
             <div class="thumbnail">
-              <img src={thumbnail} alt={title} loading="lazy" />
+              <img src={image} alt={title} loading="lazy" />
             </div>
           )
         }

@@ -3,8 +3,8 @@
   -webkit-text-size-adjust: 100%;
   margin: 0;
   color: var(--foreground);
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 1.8;
   word-wrap: break-word;
 }
 
@@ -25,6 +25,7 @@
 .prose a {
   background-color: transparent;
   text-decoration: none;
+  border-bottom: 1px dashed;
 }
 
 .prose abbr[title] {
@@ -79,7 +80,11 @@
   max-width: 100%;
   box-sizing: content-box;
   border-radius: 4px;
-  background-color: var(--color-2);
+}
+
+.prose > p > img {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .prose code,
@@ -145,10 +150,6 @@
 .prose ::-webkit-file-upload-button {
   -webkit-appearance: button;
   font: inherit;
-}
-
-.prose a:hover {
-  text-decoration: underline;
 }
 
 .prose ::placeholder {
@@ -809,4 +810,11 @@
   .toc {
     display: none;
   }
+}
+
+.prose .emoji {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 24px;
+  max-height: 24px;
 }

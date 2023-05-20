@@ -1,6 +1,6 @@
 ---
 import Blog from "#/libs/blog/Blog.astro";
-import { getCollection, getEntry } from "astro:content";
+import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
