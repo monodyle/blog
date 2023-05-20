@@ -1,16 +1,19 @@
-import rss from '@astrojs/rss';
-import { getCollection } from 'astro:content';
-import consts from '../consts';
+import rss from "@astrojs/rss";
+import { getCollection } from "astro:content";
+import consts from "../consts";
 
 export async function get(context) {
-	const posts = await getCollection('blog');
-	return rss({
-		title: consts.title,
-		description: consts.description,
-		site: context.site,
-		items: posts.map((post) => ({
-			...post.data,
-			link: `/blog/${post.slug}/`,
-		})),
-	});
+  const posts = await getCollection("blog");
+  return rss({
+    title: consts.title,
+    description: consts.description,
+    site: context.site,
+    items: posts.map((post) => ({
+      content: post.data.content,
+      title: post.data.title,
+      pubDate: post.data.date,
+      description: post.data.description,
+      link: `/blog/${post.slug}`,
+    })),
+  });
 }
