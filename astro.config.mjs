@@ -38,6 +38,9 @@ export default defineConfig({
       [rehypeStringify, { allowDangerousHtml: true }],
     ],
   },
-  output: "server",
+  experimental: {
+    hybridOutput: true
+  },
+  output: "hybrid",
   adapter: cloudflare(),
 });
