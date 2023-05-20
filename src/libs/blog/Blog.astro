@@ -1,11 +1,10 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import Head from "../Head.astro";
-import Header from "../Header.astro";
-import Footer from "../Footer.astro";
 
+import "@wooorm/starry-night/style/light.css";
 import "#/styles/prose.css";
 import "#/styles/starrynight.css";
+
 import Layout from "../Layout.astro";
 
 type Props = CollectionEntry<"blog">["data"];

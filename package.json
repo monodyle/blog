@@ -25,6 +25,7 @@
     "rehype-slug": "5.1.0",
     "rehype-stringify": "9.0.3",
     "rehype-toc": "3.0.2",
+    "remark-footnotes": "4.0.1",
     "remark-gfm": "3.0.1",
     "remark-math": "5.1.1",
     "remark-parse": "10.0.2",

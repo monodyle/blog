@@ -760,3 +760,52 @@
   border: 2px solid #0969da;
   border-radius: 6px;
 }
+
+.toc {
+  position: sticky;
+  top: 240px;
+  width: 360px;
+  float: right;
+  margin-right: -480px;
+  font-size: 16px;
+  opacity: 0.25;
+  transition: opacity 240ms ease;
+}
+
+.toc:hover {
+  opacity: 1;
+}
+
+.toc ol {
+  margin: 0;
+}
+
+.toc ol > li {
+  margin: 0;
+}
+
+.toc ol > li::marker {
+  display: inline-block;
+  line-height: 1em;
+}
+
+.toc a {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-decoration: none;
+  line-height: 1em;
+  margin-bottom: -3px;
+}
+
+.toc a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1660px) {
+  .toc {
+    display: none;
+  }
+}
