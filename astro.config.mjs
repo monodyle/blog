@@ -5,13 +5,8 @@ import markdown from "./src/libs/markdown/markdown";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://example.com",
+  site: "https://minhle.space",
   integrations: [mdx(), sitemap()],
   markdown,
   output: "static",
-  // experimental: {
-  //   hybridOutput: true
-  // },
-  // output: "hybrid",
-  // adapter: cloudflare(),
 });

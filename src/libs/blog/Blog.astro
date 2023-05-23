@@ -13,7 +13,11 @@ type Props = CollectionEntry<"blog">["data"];
 const { title, excerpt, date, image, tags } = Astro.props;
 ---
 
-<Layout title={title + " - " + consts.title} description={excerpt}>
+<Layout
+  title={title + " - " + consts.title}
+  description={excerpt}
+  thumbnail={image}
+>
   <main>
     <article>
       <div class="header">
@@ -41,6 +45,34 @@ const { title, excerpt, date, image, tags } = Astro.props;
     </article>
     <div class="prose"><slot /></div>
   </main>
+  <script type="text/javascript">
+    const tockLinks = document
+      .getElementsByClassName("toc")?.[0]
+      ?.getElementsByClassName("toc-link");
+    if (tockLinks) {
+      for (const link of tockLinks) {
+        link.onclick = (e) => {
+          e.preventDefault();
+          const anchor = e.target.attributes.href.value;
+          location.href = anchor;
+        };
+      }
+    }
+
+    const links = document
+      .getElementsByClassName("prose")?.[0]
+      ?.getElementsByTagName("a");
+    if (links) {
+      for (const link of links) {
+        const urlOrigin = link.origin;
+        const blogOrigin = window.location.origin;
+        if (urlOrigin !== blogOrigin) {
+          link.setAttribute("target", "_blank");
+          link.setAttribute("rel", "noopener noreferrer");
+        }
+      }
+    }
+  </script>
 </Layout>
 
 <style>

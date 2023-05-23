@@ -91,7 +91,7 @@
 .prose kbd,
 .prose pre,
 .prose samp {
-  font-family: monospace;
+  font-family: 'Iosevka Mono', monospace;
   font-size: 1em;
 }
 
@@ -228,7 +228,7 @@
   display: inline-block;
   padding: 3px 5px;
   font-size: 11px;
-  font-family: monospace;
+  font-family: 'Iosevka Mono', monospace;
   line-height: 10px;
   vertical-align: middle;
   background-color: var(--color-8);
@@ -315,14 +315,14 @@
 .prose tt,
 .prose code,
 .prose samp {
-  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-family: 'Iosevka Mono', ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
   font-size: 12px;
 }
 
 .prose pre {
   margin-top: 0;
   margin-bottom: 0;
-  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-family: 'Iosevka Mono', ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
   font-size: 12px;
   word-wrap: normal;
 }
@@ -764,6 +764,7 @@
 }
 
 .toc {
+  /* display: none; */
   position: sticky;
   top: 240px;
   width: 360px;
@@ -817,4 +818,8 @@
   vertical-align: middle;
   max-width: 24px;
   max-height: 24px;
+}
+
+.prose sup a[aria-describedby="footnote-label"] {
+  color: #0969da;
 }

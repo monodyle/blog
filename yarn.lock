@@ -10,14 +10,6 @@
     "@jridgewell/gen-mapping" "^0.3.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@astrojs/cloudflare@^6.3.0":
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/@astrojs/cloudflare/-/cloudflare-6.3.0.tgz#86d1a184b7c91b2a1e2392c347a55500925fd419"
-  integrity sha512-XBnVRA5iFIqN1r1Rv2bR4y2TLmAyzF2H7jgvUaBUxcx38Pup7HsfW9nfFjS/dOCL41SEWlQdzSAf0Fy0f+Tzhg==
-  dependencies:
-    esbuild "^0.17.12"
-    tiny-glob "^0.2.9"
-
 "@astrojs/compiler@^1.0.1", "@astrojs/compiler@^1.4.0", "@astrojs/compiler@^1.4.1":
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-1.4.2.tgz#6480154a933acd4c79ccd703567ac5fe4a3a96a3"
@@ -1308,7 +1300,7 @@ es-module-lexer@^1.1.0, es-module-lexer@^1.1.1:
   resolved "https://registry.yarnpkg.com/es-module-lexer/-/es-module-lexer-1.2.1.tgz#ba303831f63e6a394983fde2f97ad77b22324527"
   integrity sha512-9978wrXM50Y4rTMmW5kXIC09ZdXQZqkE4mxhwkd8VbzsGkXGPgV4zWuqQJgCEzYngdo2dYDa0l8xhX4fkSwJSg==
 
-esbuild@^0.17.12, esbuild@^0.17.18, esbuild@^0.17.5:
+esbuild@^0.17.18, esbuild@^0.17.5:
   version "0.17.19"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.17.19.tgz#087a727e98299f0462a3d0bcdd9cd7ff100bd955"
   integrity sha512-XQ0jAPFkK/u3LcVRcvVHQcTIqD6E2H1fvZMA5dQPSOWb3suUbWbfbRf94pjc0bNzRYLfIrDRQXr7X+LHIm5oHw==
@@ -1583,16 +1575,6 @@ globals@^11.1.0:
   resolved "https://registry.yarnpkg.com/globals/-/globals-11.12.0.tgz#ab8795338868a0babd8525758018c2a7eb95c42e"
   integrity sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==
 
-globalyzer@0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/globalyzer/-/globalyzer-0.1.0.tgz#cb76da79555669a1519d5a8edf093afaa0bf1465"
-  integrity sha512-40oNTM9UfG6aBmuKxk/giHn5nQ8RVz/SS4Ir6zgzOv9/qC3kKZ9v4etGTcJbEl/NyVQH7FGU7d+X1egr57Md2Q==
-
-globrex@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/globrex/-/globrex-0.1.2.tgz#dd5d9ec826232730cd6793a5e33a9302985e6098"
-  integrity sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==
-
 graceful-fs@^4.1.5:
   version "4.2.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.11.tgz#4183e4e8bf08bb6e05bbb2f7d2e0c8f712ca40e3"
@@ -1859,6 +1841,11 @@ inline-style-parser@0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/inline-style-parser/-/inline-style-parser-0.1.1.tgz#ec8a3b429274e9c0a1f1c4ffa9453a7fef72cea1"
   integrity sha512-7NXolsK4CAS5+xvdj5OMMbI962hU/wvwoxk+LWR9Ek9bVtyuuYScDN6eS0rUm6TxApFpw7CX1o4uJzcd4AyD3Q==
+
+is-absolute-url@^4.0.0:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/is-absolute-url/-/is-absolute-url-4.0.1.tgz#16e4d487d4fded05cfe0685e53ec86804a5e94dc"
+  integrity sha512-/51/TKE88Lmm7Gc4/8btclNXWS+g50wXhYJq8HWIBAGUBnoAdRu1aXeh364t/O7wXDAcTJDP8PNuNKWUDWie+A==
 
 is-alphabetical@^2.0.0:
   version "2.0.1"
@@ -3095,6 +3082,19 @@ rehype-document@6.1.0:
     hastscript "^7.0.0"
     unified "^10.0.0"
 
+rehype-external-links@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/rehype-external-links/-/rehype-external-links-2.1.0.tgz#e13a2f16c3629b569baea842515b7e200f62f512"
+  integrity sha512-2YMJZVM1hxZnwl9IPkbN5Pjn78kXkAX7lq9VEtlaGA29qIls25vZN+ucNIJdbQUe+9NNFck17BiOhGmsD6oLIg==
+  dependencies:
+    "@types/hast" "^2.0.0"
+    extend "^3.0.0"
+    hast-util-is-element "^2.0.0"
+    is-absolute-url "^4.0.0"
+    space-separated-tokens "^2.0.0"
+    unified "^10.0.0"
+    unist-util-visit "^4.0.0"
+
 rehype-katex@6.0.3:
   version "6.0.3"
   resolved "https://registry.yarnpkg.com/rehype-katex/-/rehype-katex-6.0.3.tgz#83e5b929b0967978e9491c02117f55be3594d7e1"
@@ -3580,14 +3580,6 @@ synckit@^0.8.4:
   dependencies:
     "@pkgr/utils" "^2.3.1"
     tslib "^2.5.0"
-
-tiny-glob@^0.2.9:
-  version "0.2.9"
-  resolved "https://registry.yarnpkg.com/tiny-glob/-/tiny-glob-0.2.9.tgz#2212d441ac17928033b110f8b3640683129d31e2"
-  integrity sha512-g/55ssRPUjShh+xkfx9UPDXqhckHEsHr4Vd9zX55oSdGZc/MD0m3sferOkwWtp98bv+kcVfEHtRJgBVJzelrzg==
-  dependencies:
-    globalyzer "0.1.0"
-    globrex "^0.1.2"
 
 titleize@^3.0.0:
   version "3.0.0"

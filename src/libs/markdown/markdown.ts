@@ -1,14 +1,15 @@
 import type { AstroUserConfig } from "astro";
-import remarkParse from "remark-parse";
-import remarkMath from "remark-math";
-import remarkGfm from "remark-gfm";
-import remarkFootnote from "remark-footnotes";
-import remarkRehype from "remark-rehype";
-import rehypeKatex from "rehype-katex";
-import rehypeToc from "rehype-toc";
-import rehypeDocument from "rehype-document";
-import rehypeStringify from "rehype-stringify";
 import rehypeCustomEmoji from "rehype-custom-emoji";
+import rehypeDocument from "rehype-document";
+import rehypeExternalLinks from "rehype-external-links";
+import rehypeKatex from "rehype-katex";
+import rehypeStringify from "rehype-stringify";
+import rehypeToc from "rehype-toc";
+import remarkFootnote from "remark-footnotes";
+import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
 import rehypeStarryNight from "./code";
 import { markdownHeading } from "./heading";
 
@@ -58,6 +59,7 @@ const markdown: AstroUserConfig["markdown"] = {
     markdownHeading as unknown as string,
     rehypeToc as unknown as string,
     [rehypeStringify as unknown as string, { allowDangerousHtml: true }],
+    [rehypeExternalLinks, { target: "_blank", rel: ["noopener noreferrer"] }],
     [rehypeCustomEmoji, { emojis }],
   ],
 };

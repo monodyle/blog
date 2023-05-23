@@ -17,18 +17,37 @@ const links = [
 export interface Props {
   title?: string;
   description?: string;
+  thumbnail?: string;
 }
 
-const { title = consts.title, description = consts.description } = Astro.props;
+const {
+  title = consts.title,
+  description = consts.description,
+  thumbnail,
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <Head title={title} description={description} />
+    <Head title={title} description={description} thumbnail={thumbnail} />
     <script>
       import "./router";
     </script>
+    <link
+      href="/fonts/Iosevka-Mono.woff"
+      rel="preload"
+      type="font/woff2"
+      as="font"
+      crossorigin=""
+    />
+    <link
+      href="/fonts/Iosevka-Mono.woff2"
+      rel="preload"
+      type="font/woff2"
+      as="font"
+      crossorigin=""
+    />
 
     <style>
       header {
