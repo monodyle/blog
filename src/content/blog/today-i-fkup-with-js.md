@@ -82,11 +82,11 @@ const result = data
 console.table(result)
 ```
 
-Sau đó mình chạy thử, và dĩ nhiên để hoàn thành việc thử nghiệm nhanh chóng nhất mình đã thử trực tiếp bằng console trên browser của mình cho lẹ, và browser mặc định của mình là Firefox:
+Cuối cùng mình cần chạy thử, và để hoàn thành việc thử nghiệm nhanh chóng nhất, mình đã chạy trực tiếp bằng console trên browser cho lẹ, và browser mặc định của mình là Firefox:
 
 ![Console result of Firefox](/assets/blog/today-i-fkup-with-js/firefox-console.png)
 
-Tới đây, sau khi nhìn kết quả mình đã tấm tắc nghĩ công thức này thật tuyệt vời.
+Tới đây, sau khi nhìn kết quả mình đã tấm tắc khen hay.
 
 Nhưng...
 
@@ -96,7 +96,7 @@ Cho tới khi mình thử lại với cùng đoạn code trên ở trên NodeJS 
 
 "*Quát đờ heo*", đó là những gì mình đã thốt lên sau khi nhìn những gì console nó in ra. Hai kết quả vẫn trả về đúng, tuy nhiên, thứ tự lại khác nhau rất nhiều.
 
-Mình còn sợ mình copy thiếu hoặc làm sai bước nào, thế là mình phải ngồi khoảng 30p để tìm đủ cách xem thử 2 đoạn code có khác nhau chỗ nào không. Thì tất nhiên là không rồi :nosebleed:
+Mình còn sợ mình copy thiếu hoặc làm sai bước nào, thế là mình phải ngồi khoảng 30p để tìm đủ cách xem thử 2 đoạn code có khác nhau chỗ nào không. Và tất nhiên là không rồi :nosebleed:
 
 Sau một hồi nhìn tới nhìn lui, mình nghĩ kết quả cho từng pair data vẫn đúng, nhưng thứ tự sai, thì tức là chỉ có thể phép sort có vấn đề.
 
@@ -113,22 +113,33 @@ Tại sao ư? Lý do là đây:
 
 ![](/assets/blog/today-i-fkup-with-js/lsp.png)
 
-Theo [**Properties of the Array Prototype Object** trong **ECMAScript specification**](https://tc39.es/ecma262/multipage/indexed-collections.html#sec-array.prototype.sort)[^1] mình tìm được:
+Theo **Properties of the Array Prototype Object** trong **ECMAScript specification**[^0] mình tìm được:
+
 > This method sorts the elements of this array. The sort must be stable (that is, elements that compare equal must remain in their original order). If `comparefn` is not **undefined**, it should be a function that accepts two arguments `x` and `y` and returns a *negative Number* if `x` < `y`, a *positive Number* if `x` > `y`, or a *zero* otherwise.
 
-Vậy mà linter nó không báo lỗi kỳ ghê, đúng là "expect" chứ không phải "must".
+[^0]: https://tc39.es/ecma262/multipage/indexed-collections.html#sec-array.prototype.sort
 
 Tại sao nhỉ? Lúc mình debug, mình phát hiện ra một thứ nho nhỏ khá thú vị:
 
 ![](/assets/blog/today-i-fkup-with-js/compare-console.png)
 
-Hai argument ở hai engine này có thứ tự khác nhau, lý do tại sao thì mình cũng chả biết, nhưng để đoán thì có thể là do mỗi browser đều có một spec riêng, mặc dù cuối cùng vẫn sẽ follow theo một standard cuối cùng. Và có thể nó được implement từ phía engine của browser, là depend của một số chỗ khác nên rất khó để thay đổi thành một kiểu thống nhất. 
+Hai argument ở hai engine này có thứ tự khác nhau, lý do tại sao thì mình cũng chả biết, nhưng để đoán thì có thể là do mỗi browser đều có một spec riêng, mặc dù cuối cùng vẫn sẽ follow theo một standard cuối cùng. Và có thể nó được implement từ phía engine của browser, là depend của một số chỗ khác nên rất khó để thay đổi thành một kiểu thống nhất.
 
 Phán đoán trên dựa vào việc khi mình lướt qua spec:
 > If comparefn is not undefined, it should be a function that **accepts two arguments x and y** (...)
 
 Đúng vậy, nó chỉ nhắc tới việc hai agrument `x` và `y` chứ không hề nói về thứ tự.
 
+Vậy mà linter nó không báo lỗi kỳ ghê, đúng là "expect" chứ không phải "must".
+
+Maybe you don't know:
+- Engine JS của Firefox là SpiderMonkey, khác với đa số các runtime khác như Chromium, NodeJS là V8.
+- Hàm sort mặc định của Firefox sử dụng Merge Sort[^1]
+- Hàm sort mặc định của V8 là Tim Sort[^2]
+
+[^1]: https://github.com/v8/v8/blob/00e0311b24f81702be8952994afd5ce8a9b415b8/third_party/v8/builtins/array-sort.tq#L5
+[^2]: https://bugzilla.mozilla.org/attachment.cgi?id=150540&action=edit
+
 ## Kết
 
-Mặc dù biết JavaScript sucks nhưng mình không ngờ lâu lâu vẫn vấp phải mấy cái lỗi củ chuối như này =)) Thôi dù sao nó cũng đang nuôi mình nên chửi thì chửi chứ vẫn nhắm mắt cho qua thôi. Nếu bạn còn đọc tới đây, cảm ơn bạn đã dành thời gian ra ngồi đọc cái bài blog ~~chửi rủa~~ bug write up này của mình.
+Mặc dù biết JavaScript sucks nhưng mình không ngờ lâu lâu vẫn vấp phải mấy cái lỗi củ chuối như này :go: Thôi dù sao nó cũng đang nuôi mình nên chửi thì chửi chứ vẫn nhắm mắt cho qua thôi. Nếu bạn còn đọc tới đây, cảm ơn bạn đã dành thời gian ra ngồi đọc cái bài blog ~~chửi rủa~~ bug write up này của mình.
