@@ -137,8 +137,8 @@ Maybe you don't know:
 - Hàm sort mặc định của Firefox sử dụng Merge Sort[^1]
 - Hàm sort mặc định của V8 là Tim Sort[^2]
 
-[^1]: https://github.com/v8/v8/blob/00e0311b24f81702be8952994afd5ce8a9b415b8/third_party/v8/builtins/array-sort.tq#L5
-[^2]: https://bugzilla.mozilla.org/attachment.cgi?id=150540&action=edit
+[^1]: https://bugzilla.mozilla.org/attachment.cgi?id=150540&action=edit
+[^2]: https://github.com/v8/v8/blob/00e0311b24f81702be8952994afd5ce8a9b415b8/third_party/v8/builtins/array-sort.tq#L5
 
 ## Kết
 
