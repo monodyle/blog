@@ -56,7 +56,7 @@
 }
 
 .prose small {
-  font-size: 90%;
+  font-size: 80%;
 }
 
 .prose sub,
@@ -533,6 +533,10 @@
 
 .prose img[align='left'] {
   padding-right: 20px;
+}
+
+.prose video {
+  margin: 0 auto;
 }
 
 .prose .emoji {
