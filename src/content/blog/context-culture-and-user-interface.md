@@ -6,7 +6,7 @@ image: /assets/blog/context-culture-and-user-interface/featured.png
 tags: [talk, ui]
 ---
 
-Có một dạo mình nghiện uống cafe, cộng thêm việc đêm dài khó ngủ, nhiều suy nghĩ ngớ ngẩn nó cứ lẩn quẩn trong đầu. Một đêm trăng thanh gió mát nào đó, mình thắc mắc tại sao một cử chỉ hay đôi ba lời nói lại có thể được hiểu theo nhiều cách khác nhau ở các quốc gia khác nhau? Như việc sử dụng ngón cái 👍 của mình là cổ vũ hoặc đồng ý về một việc gì đó, nhưng ở Trung Đông họ lại xem nó như việc bạn giơ ngón giữa vào mặt họ[^1]?
+Có một dạo mình nghiện uống cafe, cộng thêm việc đêm dài khó ngủ, nhiều suy nghĩ ngớ ngẩn cứ lẩn quẩn trong đầu. Một đêm trăng thanh gió mát nào đó, mình thắc mắc tại sao một cử chỉ hay đôi ba lời nói lại có thể được hiểu theo nhiều cách khác nhau ở các quốc gia khác nhau? Như việc sử dụng ngón cái 👍 của mình là cổ vũ hoặc đồng ý về một việc gì đó, nhưng ở Trung Đông họ lại xem nó như việc bạn giơ ngón giữa vào mặt họ[^1]?
 
 [^1]: https://slate.com/news-and-politics/2003/03/what-does-a-thumbs-up-mean-in-iraq.html
 
@@ -15,7 +15,7 @@ Tại sao một chiến dịch quảng cáo thương mại đã từng rất th�
 [^2]: https://www.creativereview.co.uk/its-finger-lickin-good-slogan-kfc/
 [^3]: https://www.snopes.com/fact-check/come-alive/
 
-Nói xa xôi là thế, lấy ví dụ gần gũi hơn là việc mình và mẹ lâu lâu hay nói về một cái vấn đề gì đấy nhức nhối trong xã hội, mẹ mình thì xem đấy là những thứ tiêu cực, nhưng mình đứng ở góc độ một phần của cái xã hội nhức nhối đấy thì lại không nghĩ như thế... :kappa: Ngược lại, nhiều lần mẹ mình dặn dò về chuyện hãy giữ sức khoẻ, lúc mình còn trẻ thì thấy mấy cái đó chả có gì to tát lắm, mà sao người lớn nhắc hoài, phiền ghê, nhưng dạo gần đây tới lúc cơ thể không còn linh hoạt như hồi đôi mươi nữa, tự dưng lại thấy lời mẹ khuyên ngày trước không lệch đi đâu được.
+Nói xa xôi là thế, lấy ví dụ gần gũi hơn là việc mình và mẹ lâu lâu hay nói về một cái vấn đề gì đấy nhức nhối trong xã hội, mẹ mình thì xem đấy là những thứ tiêu cực, nhưng mình đứng ở góc độ một phần của cái xã hội nhức nhối đấy thì lại không nghĩ như thế... :smug: Ngược lại, nhiều lần mẹ mình dặn dò về chuyện hãy giữ sức khoẻ, lúc mình còn trẻ thì thấy mấy cái đó chả có gì to tát lắm, mà sao người lớn nhắc hoài, phiền ghê, nhưng dạo gần đây tới lúc cơ thể không còn linh hoạt như hồi đôi mươi nữa, tự dưng lại thấy lời mẹ khuyên ngày trước không lệch đi đâu được.
 
 Dù ít dù nhiều, những thứ trên đều những vấn đề chúng ta thường xuyên gặp phải khi giao tiếp. Đó là việc ngữ cảnh giao tiếp khác nhau.
 
@@ -25,11 +25,13 @@ Hồi còn mài đít trên ghế nhà trường, học tới mấy bài lịch 
 
 Và cứ nghĩ vẩn vơ như thế làm nhiều đêm mất ngủ, dần dần mình trở thành một con gấu trúc, mình vẫn chưa hiểu được tại sao :yaomin: Nhưng thay vì mình đi tìm câu trả lời, mình đi tìm những kỳ quan mà con người đã đạt được. Việc giao tiếp trong xã hội hiện đại không còn đơn thuần chỉ là lời nói (verbal), mà nó còn nhiều hơn là những cử chỉ (gestures), hình thể (body language), và cả không lời (non-verbal). Những yếu tố này kết hợp tạo thành những sắc thái khiến cho ý nghĩa của thông điệp có thể thay đổi khi đặt vào những ngữ cảnh khác nhau.
 
-Ví dụ, trong văn hoá Á Đông, mình và bạn đi trên đường gặp nhau có thể gật đầu để thay lời chào. Nhưng cũng cái gật đầu, các bạn có thể xem video dưới đây:
+Ví dụ, trong văn hoá Á Đông, mình và bạn đi trên đường gặp nhau có thể gật đầu để thay lời chào. Nhưng cũng cái gật đầu, các bạn có thể xem video dưới đây[^8]:
 
 <video controls width="250">
   <source src="/assets/blog/context-culture-and-user-interface/body-language.mp4" type="video/mp4" />
 </video>
+
+[^8]: Nguồn: https://9gag.com/gag/amvMyOy
 
 <small><em>(Chỉ tay có nghĩa là "nữa không", chỉ tay có nghĩa là "ông thì sao?", gật đầu có nghĩa là "có" hoặc "nữa", gật đầu có nghĩa là "cảm ơn", và gật đầu có nghĩa là "không có gì").</em></small>
 
