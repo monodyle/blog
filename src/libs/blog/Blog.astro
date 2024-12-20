@@ -97,6 +97,11 @@ const { title, excerpt, date, image, tags } = Astro.props;
   .prose {
     padding: 0 24px;
   }
+  @media (max-width: 1250px) {
+    .prose {
+      padding: 0 8px;
+    }
+  }
   .header {
     padding: 0 24px;
     margin-bottom: 48px;
