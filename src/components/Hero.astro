@@ -1,0 +1,117 @@
+<div class="isolate">
+  <div id="hero" class="min-h-96 pt-16 [&>canvas]:pointer-events-none">
+    <slot />
+  </div>
+</div>
+
+<script>
+  import * as THREE from "three";
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+  const renderer = new THREE.WebGLRenderer({ alpha: true });
+  const hero = document.getElementById("hero")!;
+
+  // Ensure hero has position relative so the absolute canvas stays within it
+  hero.style.position = "relative";
+  hero.style.overflow = "hidden";
+
+  renderer.setSize(hero.clientWidth, hero.clientHeight);
+  renderer.setClearColor(0x000000, 0);
+
+  const canvas = renderer.domElement;
+  canvas.style.position = "absolute";
+  canvas.style.top = "0";
+  canvas.style.left = "0";
+  canvas.style.width = "100%";
+  canvas.style.height = "100%";
+  canvas.style.pointerEvents = "none";
+
+  hero.prepend(canvas);
+
+  const geometry = new THREE.PlaneGeometry(2, 2);
+
+  const vertexShader = `
+  void main() {
+    gl_Position = vec4(position, 1.0);
+  }
+`;
+
+  const fragmentShader = `
+  uniform vec2 u_resolution;
+  uniform float u_time;
+
+  float random(vec2 st) {
+    return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123);
+  }
+
+  float noise(vec2 st) {
+    vec2 i = floor(st);
+    vec2 f = fract(st);
+    vec2 u = f * f * (3.0 - 2.0 * f);
+    return mix(mix(random(i + vec2(0.0, 0.0)), random(i + vec2(1.0, 0.0)), u.x),
+               mix(random(i + vec2(0.0, 1.0)), random(i + vec2(1.0, 1.0)), u.x), u.y);
+  }
+
+  void main() {
+    vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+
+    vec2 centeredUV = uv - 0.4;
+
+    float n = noise(uv * 3.0 + u_time * 0.1);
+
+    vec3 color1 = vec3(0.65, 0.5, 0.95); // Lighter lavender purple
+    vec3 color2 = vec3(0.98, 0.65, 0.75); // Softer rose pink
+    vec3 color3 = vec3(0.98, 0.92, 0.82); // Lighter cream beige
+
+    vec3 gradient = mix(color1, color2, uv.x + n * 0.2);
+    gradient = mix(gradient, color3, uv.y + n * 0.3);
+
+    float noiseAlpha = smoothstep(0.1, 0.9, n);
+
+    float topFade = smoothstep(0.0, 0.6, uv.y);
+    float bottomFade = smoothstep(1.0, 0.5, uv.y);
+
+    float gradientMask = topFade * bottomFade;
+    gradientMask = gradientMask * (0.8 + noiseAlpha * 0.2);
+
+    float alpha = gradientMask * noiseAlpha;
+
+    vec3 color = gradient;
+
+    gl_FragColor = vec4(color, alpha);
+  }
+`;
+
+  const material = new THREE.ShaderMaterial({
+    uniforms: {
+      u_resolution: {
+        value: new THREE.Vector2(window.innerWidth, window.innerHeight),
+      },
+      u_time: { value: 0.0 },
+    },
+    vertexShader: vertexShader,
+    fragmentShader: fragmentShader,
+    transparent: true,
+  });
+
+  // Create the mesh and add it to the scene
+  const mesh = new THREE.Mesh(geometry, material);
+  scene.add(mesh);
+
+  function animate() {
+    requestAnimationFrame(animate);
+    material.uniforms.u_time.value += 0.02;
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  // Handle window resizing
+  window.addEventListener("resize", () => {
+    renderer.setSize(hero.clientWidth, hero.clientHeight);
+    material.uniforms.u_resolution.value.set(
+      window.innerWidth,
+      window.innerHeight,
+    );
+  });
+</script>

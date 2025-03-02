@@ -1,7 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import About from "../components/About.astro";
+import Hero from "../components/Hero.astro";
+import Posts from "../components/Posts.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <h1>Hello World</h1>
+  <Hero>
+    <div class="container px-3 py-16 relative flex justify-center">
+      <About />
+    </div>
+  </Hero>
+
+  <div class="container px-3 py-16 relative">
+    <Posts />
+  </div>
 </Layout>
