@@ -21,7 +21,11 @@ const { Content } = await render(post);
   description={post.data.excerpt ?? post.body?.slice(0, 150)}
 >
   <div class="container px-3 py-24">
-    <span class="text-subtle">{post.data.date}</span>
+    <div class="text-subtle">
+      on
+      <span class="lowercase">{post.data.date}</span>
+      <a href="/til" class="text-primary">i learned</a>...
+    </div>
     <h1 class="text-4xl font-semibold mb-5">
       {post.data.title}
     </h1>
