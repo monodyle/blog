@@ -91,7 +91,7 @@
 .prose kbd,
 .prose pre,
 .prose samp {
-  font-family: 'Iosevka Mono', monospace;
+  font-family: "Iosevka Mono", monospace;
   font-size: 1em;
 }
 
@@ -120,25 +120,25 @@
   line-height: inherit;
 }
 
-.prose [type='button'],
-.prose [type='reset'],
-.prose [type='submit'] {
+.prose [type="button"],
+.prose [type="reset"],
+.prose [type="submit"] {
   -webkit-appearance: button;
 }
 
-.prose [type='checkbox'],
-.prose [type='radio'] {
+.prose [type="checkbox"],
+.prose [type="radio"] {
   box-sizing: border-box;
   padding: 0;
 }
 
-.prose [type='number']::-webkit-inner-spin-button,
-.prose [type='number']::-webkit-outer-spin-button {
+.prose [type="number"]::-webkit-inner-spin-button,
+.prose [type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
-.prose [type='search']::-webkit-search-cancel-button,
-.prose [type='search']::-webkit-search-decoration {
+.prose [type="search"]::-webkit-search-cancel-button,
+.prose [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -159,13 +159,13 @@
 
 .prose hr::before {
   display: table;
-  content: '';
+  content: "";
 }
 
 .prose hr::after {
   display: table;
   clear: both;
-  content: '';
+  content: "";
 }
 
 .prose table {
@@ -191,25 +191,25 @@
 }
 
 .prose a:focus,
-.prose [role='button']:focus,
-.prose input[type='radio']:focus,
-.prose input[type='checkbox']:focus {
+.prose [role="button"]:focus,
+.prose input[type="radio"]:focus,
+.prose input[type="checkbox"]:focus {
   outline: 2px solid var(--color-subtle);
   outline-offset: -2px;
   box-shadow: none;
 }
 
 .prose a:focus:not(:focus-visible),
-.prose [role='button']:focus:not(:focus-visible),
-.prose input[type='radio']:focus:not(:focus-visible),
-.prose input[type='checkbox']:focus:not(:focus-visible) {
+.prose [role="button"]:focus:not(:focus-visible),
+.prose input[type="radio"]:focus:not(:focus-visible),
+.prose input[type="checkbox"]:focus:not(:focus-visible) {
   outline: solid 1px transparent;
 }
 
 .prose a:focus-visible,
-.prose [role='button']:focus-visible,
-.prose input[type='radio']:focus-visible,
-.prose input[type='checkbox']:focus-visible {
+.prose [role="button"]:focus-visible,
+.prose input[type="radio"]:focus-visible,
+.prose input[type="checkbox"]:focus-visible {
   outline: 2px solid var(--color-subtle);
   outline-offset: -2px;
   box-shadow: none;
@@ -217,10 +217,10 @@
 
 .prose a:not([class]):focus,
 .prose a:not([class]):focus-visible,
-.prose input[type='radio']:focus,
-.prose input[type='radio']:focus-visible,
-.prose input[type='checkbox']:focus,
-.prose input[type='checkbox']:focus-visible {
+.prose input[type="radio"]:focus,
+.prose input[type="radio"]:focus-visible,
+.prose input[type="checkbox"]:focus,
+.prose input[type="checkbox"]:focus-visible {
   outline-offset: 0;
 }
 
@@ -228,7 +228,7 @@
   display: inline-block;
   padding: 3px 5px;
   font-size: 11px;
-  font-family: 'Iosevka Mono', monospace;
+  font-family: "Iosevka Mono", monospace;
   line-height: 10px;
   vertical-align: middle;
   background-color: var(--color-8);
@@ -284,13 +284,14 @@
 .prose blockquote {
   margin: 0;
   padding: 0.5em 2em;
-  font-size: 1.25em;
-  color: var(--color-2);
-  border-left: 0.25em solid var(--color-6);
+  font-size: 1.15em;
+  color: var(--color-primary);
+  border-left: 0.25em solid var(--color-border);
 }
 
 .prose ul,
 .prose ol {
+  list-style: initial;
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 2em;
@@ -315,14 +316,16 @@
 .prose tt,
 .prose code,
 .prose samp {
-  font-family: 'Iosevka Mono', ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, 'Liberation Mono', monospace;
+  font-family: "Iosevka Mono", ui-monospace, SFMono-Regular, SF Mono, Menlo,
+    Consolas, "Liberation Mono", monospace;
   font-size: 12px;
 }
 
 .prose pre {
   margin-top: 0;
   margin-bottom: 0;
-  font-family: 'Iosevka Mono', ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, 'Liberation Mono', monospace;
+  font-family: "Iosevka Mono", ui-monospace, SFMono-Regular, SF Mono, Menlo,
+    Consolas, "Liberation Mono", monospace;
   font-size: 12px;
   word-wrap: normal;
 }
@@ -336,13 +339,13 @@
 
 .prose::before {
   display: table;
-  content: '';
+  content: "";
 }
 
 .prose::after {
   display: table;
   clear: both;
-  content: '';
+  content: "";
 }
 
 .prose > *:first-child {
@@ -448,23 +451,23 @@
   list-style-type: none;
 }
 
-.prose ol[type='a'] {
+.prose ol[type="a"] {
   list-style-type: lower-alpha;
 }
 
-.prose ol[type='A'] {
+.prose ol[type="A"] {
   list-style-type: upper-alpha;
 }
 
-.prose ol[type='i'] {
+.prose ol[type="i"] {
   list-style-type: lower-roman;
 }
 
-.prose ol[type='I'] {
+.prose ol[type="I"] {
   list-style-type: upper-roman;
 }
 
-.prose ol[type='1'] {
+.prose ol[type="1"] {
   list-style-type: decimal;
 }
 
@@ -527,11 +530,11 @@
   background-color: transparent;
 }
 
-.prose img[align='right'] {
+.prose img[align="right"] {
   padding-left: 20px;
 }
 
-.prose img[align='left'] {
+.prose img[align="left"] {
   padding-right: 20px;
 }
 
@@ -637,10 +640,10 @@
 .prose tt {
   padding: 0.2em 0.4em;
   margin: 0;
-  font-size: 85%;
+  font-size: 80%;
   white-space: break-spaces;
-  background-color: var(--color-7);
   border-radius: 6px;
+  @apply bg-violet/10 text-violet font-mono;
 }
 
 .prose code br,
@@ -728,11 +731,11 @@
 }
 
 .prose [data-footnote-ref]::before {
-  content: '[';
+  content: "[";
 }
 
 .prose [data-footnote-ref]::after {
-  content: ']';
+  content: "]";
 }
 
 .prose .footnotes {
@@ -763,7 +766,7 @@
   bottom: -8px;
   left: -24px;
   pointer-events: none;
-  content: '';
+  content: "";
   border: 2px solid var(--placeholder);
   border-radius: 6px;
 }
