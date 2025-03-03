@@ -1,5 +1,13 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const content = (await getCollection("blog"))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .map((post) => ({
+    ...post,
+    slug: post.filePath?.split("/").pop()?.split(".")[0],
+  }));
 ---
 
 <Layout>
@@ -10,13 +18,20 @@ import Layout from "../../layouts/Layout.astro";
       </h1>
     </div>
 
-    <div class="space-y-4">
-      <div class="ml-2 pl-8 border-l border-border">
-        <h2 class="text-2xl font-serif">It's a new day</h2>
-        <p class="text-subtle">
-          I'm not sure what to write here.
-        </p>
-      </div>
-    </div>
+    <ul>
+      {
+        content.map((post) => (
+          <li class="ml-2 pl-8 border-l border-border inline-block py-4">
+            <span class="text-subtle text-xs">
+              {post.data.date}
+            </span>
+            <h2 class="text-2xl font-serif">
+              <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+            </h2>
+            <p class="text-subtle">{post.data.excerpt}</p>
+          </li>
+        ))
+      }
+    </ul>
   </div>
 </Layout>
