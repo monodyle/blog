@@ -1,0 +1,32 @@
+---
+import "../../styles/prose.css";
+
+import { getCollection, render } from "astro:content";
+import Layout from "src/layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("til");
+  return posts.map((post) => ({
+    params: { slug: post.filePath?.split("/").pop()?.split(".")[0] },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout
+  title={`${post.data.title} — monody's til`}
+  description={post.data.excerpt ?? post.body?.slice(0, 150)}
+>
+  <div class="container px-3 py-24">
+    <span class="text-subtle">{post.data.date}</span>
+    <h1 class="text-4xl font-semibold mb-5">
+      {post.data.title}
+    </h1>
+    <article class="prose">
+      <Content />
+    </article>
+  </div>
+</Layout>

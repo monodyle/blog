@@ -1,16 +1,36 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const content = (await getCollection("til"))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .map((post) => ({
+    ...post,
+    slug: post.filePath?.split("/").pop()?.split(".")[0],
+  }));
 ---
 
 <Layout>
-  <div class="container px-3 py-16">
-    <div class="py-12">
-      <h1 class="text-2xl font-instrument-serif">
-        Which days are the strongest? — <em>Saturday and Sunday</em>
-      </h1>
-      <p>
-        The rest are <em>weekdays</em>.
-      </p>
+  <div class="container px-3 py-24">
+    <h1 class="text-2xl font-instrument-serif">
+      Which days are the strongest? — <em>Saturday and Sunday</em>
+    </h1>
+    <p>
+      The rest are <em>weekdays</em>.
+    </p>
+    <div class="pt-12">
+      <ul class="space-y-4">
+        {
+          content.map((post) => (
+            <li class="border-b border-border pb-4">
+              <a href={`/til/${post.slug}`}>
+                <span class="text-subtle">{post.data.date} —</span>
+                {post.data.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </div>
 </Layout>
