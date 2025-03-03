@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "@shikijs/types": "^3.1.0",
     "@types/three": "0.174.0"
   }
 }

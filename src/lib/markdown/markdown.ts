@@ -9,6 +9,7 @@ import remarkMath from 'remark-math'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import { markdownHeading } from './heading'
+import { lightTheme } from './shiki-theme'
 
 /* export const emojis: Record<string, string> = {
   adore: '/assets/emoji/adore.png',
@@ -41,7 +42,7 @@ import { markdownHeading } from './heading'
 const markdown: AstroUserConfig['markdown'] = {
   syntaxHighlight: 'shiki',
   shikiConfig: {
-    theme: 'vitesse-light',
+    theme: lightTheme,
   },
   remarkPlugins: [
     remarkParse as unknown as string,

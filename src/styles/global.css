@@ -39,7 +39,7 @@
 
   ::-webkit-scrollbar-thumb {
     border-radius: 2px;
-    background: oklch(14.48% 0 0 / 20%);
+    background: oklch(14.48% 0 0 / 10%);
   }
 
   ::-webkit-scrollbar-thumb:hover {
