@@ -1,0 +1,59 @@
+---
+import "../../styles/prose.css";
+
+import { getCollection, render } from "astro:content";
+import Layout from "src/layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("blog");
+  return entries.map((entry) => ({
+    params: { slug: entry.filePath?.split("/").pop()?.split(".")[0] },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Layout
+  title={`${entry.data.title} — monody's blog`}
+  description={entry.data.excerpt ?? entry.body?.slice(0, 150)}
+>
+  <div class="container px-3 py-24">
+    <div class="px-6 mb-12">
+      {
+        entry.data.image && (
+          <div class="relative -mx-12 mb-12 rounded-2xl w-[calc(100%+4rem)] pt-[52.5%] overflow-hidden">
+            <img
+              src={entry.data.image}
+              alt={entry.data.title}
+              loading="lazy"
+              class="absolute inset-0 object-cover object-center"
+            />
+          </div>
+        )
+      }
+      <div class="flex items-center gap-1">
+        <small class="date">
+          {
+            new Intl.DateTimeFormat("en-US", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            }).format(new Date(entry.data.date))
+          }
+        </small>
+        {
+          entry.data.tags?.map((tag: string) => (
+            <small class="rounded bg-secondary/50 block px-1 py-0.5">{tag}</small>
+          ))
+        }
+      </div>
+      <h1 class="title">{entry.data.title}</h1>
+    </div>
+    <article class="prose px-6 lg:px-12">
+      <Content />
+    </article>
+  </div>
+</Layout>
