@@ -19,38 +19,42 @@ const { Content } = await render(entry);
   description={entry.data.excerpt ?? entry.body?.slice(0, 150)}
 >
   <div class="container px-3 py-24">
-    <div class="px-6 mb-12">
+    <div class="px-6 mb-12 text-center space-y-2">
       {
         entry.data.image && (
-          <div class="relative -mx-12 mb-12 rounded-2xl w-[calc(100%+4rem)] pt-[52.5%] overflow-hidden">
+          <div class="relative -mx-9 mb-12 rounded-2xl w-[calc(100%+4.5rem)] pt-[52.5%] overflow-hidden">
             <img
               src={entry.data.image}
               alt={entry.data.title}
               loading="lazy"
-              class="absolute inset-0 object-cover object-center"
+              class="absolute inset-0 w-full h-full object-cover object-center"
             />
           </div>
         )
       }
-      <div class="flex items-center gap-1">
-        <small class="date">
-          {
-            new Intl.DateTimeFormat("en-US", {
-              year: "numeric",
-              month: "short",
-              day: "numeric",
-            }).format(new Date(entry.data.date))
-          }
-        </small>
+      <small class="text-subtle">
+        {
+          new Intl.DateTimeFormat("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          }).format(new Date(entry.data.date))
+        }
+      </small>
+      <h1 class="text-3xl font-semibold font-serif text-balance lg:px-16">
+        {entry.data.title}
+      </h1>
+      <div class="flex items-center gap-4 justify-center">
         {
           entry.data.tags?.map((tag: string) => (
-            <small class="rounded bg-secondary/50 block px-1 py-0.5">{tag}</small>
+            <small class="font-medium font-mono uppercase text-[10px] text-subtle">
+              {tag}
+            </small>
           ))
         }
       </div>
-      <h1 class="title">{entry.data.title}</h1>
     </div>
-    <article class="prose px-6 lg:px-12">
+    <article class="prose lg:px-6">
       <Content />
     </article>
   </div>

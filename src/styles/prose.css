@@ -82,6 +82,18 @@
   border-radius: 4px;
 }
 
+.prose video {
+  border-radius: 4px;
+}
+
+.prose video + p > small {
+  display: block;
+  text-align: center;
+  max-width: 75%;
+  margin: 0 auto;
+  text-wrap: balance;
+}
+
 .prose > p > img {
   margin-left: auto;
   margin-right: auto;
@@ -730,12 +742,8 @@
   border-top: 0;
 }
 
-.prose [data-footnote-ref]::before {
-  content: "[";
-}
-
-.prose [data-footnote-ref]::after {
-  content: "]";
+.prose a[data-footnote-ref]::before {
+  content: "^";
 }
 
 .prose .footnotes {
