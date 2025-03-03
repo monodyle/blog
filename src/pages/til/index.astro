@@ -4,13 +4,13 @@ import { getCollection } from "astro:content";
 
 const content = (await getCollection("til"))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .map((post) => ({
-    ...post,
-    slug: post.filePath?.split("/").pop()?.split(".")[0],
+  .map((entry) => ({
+    ...entry,
+    slug: entry.filePath?.split("/").pop()?.split(".")[0],
   }));
 ---
 
-<Layout>
+<Layout title="monody's til">
   <div class="container px-3 py-24">
     <h1 class="text-2xl font-instrument-serif">
       Which days are the strongest? — <em>Saturday and Sunday</em>
@@ -21,11 +21,11 @@ const content = (await getCollection("til"))
     <div class="pt-12">
       <ul class="space-y-4">
         {
-          content.map((post) => (
+          content.map((entry) => (
             <li class="border-b border-border pb-4">
-              <a href={`/til/${post.slug}`}>
-                <span class="text-subtle">{post.data.date} —</span>
-                {post.data.title}
+              <a href={`/til/${entry.slug}`}>
+                <span class="text-subtle">{entry.data.date} —</span>
+                {entry.data.title}
               </a>
             </li>
           ))
