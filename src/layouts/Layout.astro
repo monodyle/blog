@@ -2,6 +2,18 @@
 import Header from "./Header.astro";
 import "../styles/global.css";
 import Footer from "./Footer.astro";
+
+export type Props = {
+  title?: string;
+  description?: string;
+  thumbnail?: string;
+};
+
+const {
+  title = "monody",
+  description = "welcome to nowhere on internet",
+  thumbnail,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -13,7 +25,12 @@ import Footer from "./Footer.astro";
     <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>monody</title>
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={thumbnail} />
+    <meta property="og:url" content={Astro.url.href} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
