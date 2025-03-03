@@ -12,12 +12,14 @@ const content = (await getCollection("til"))
 
 <Layout title="monody's til">
   <div class="container px-3 py-24">
-    <h1 class="text-2xl font-instrument-serif">
-      Which days are the strongest? — <em>Saturday and Sunday</em>
-    </h1>
-    <p>
-      The rest are <em>weekdays</em>.
-    </p>
+    <div>
+      <h1 class="text-3xl font-instrument-serif">
+        Which days are the strongest? — <em data-answer>Saturday and Sunday</em>
+      </h1>
+      <p data-answer>
+        The rest are <em>weekdays</em>.
+      </p>
+    </div>
     <div class="pt-12">
       <ul class="space-y-4">
         {
@@ -34,3 +36,29 @@ const content = (await getCollection("til"))
     </div>
   </div>
 </Layout>
+
+<style scoped>
+  [data-answer] {
+    filter: blur(8px);
+    transition: filter 200ms ease;
+  }
+
+  [data-answer]:not(.revealed) {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  [data-answer].revealed {
+    filter: blur(0);
+  }
+</style>
+
+<script>
+  document.querySelectorAll("[data-answer]").forEach((element) => {
+    element.addEventListener("click", () => {
+      document.querySelectorAll("[data-answer]").forEach((el) => {
+        el.classList.toggle("revealed", true);
+      });
+    });
+  });
+</script>
