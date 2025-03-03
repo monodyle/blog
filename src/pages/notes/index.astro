@@ -1,13 +1,36 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const content = (await getCollection("notes"))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .map((entry) => ({
+    ...entry,
+    slug: entry.filePath?.split("/").pop()?.split(".")[0],
+  }));
 ---
 
-<Layout>
-  <div class="container px-3 py-16">
-    <div class="py-12">
-      <h1 class="text-4xl font-instrument-serif">
-        Take<span class="italic">away</span>
-      </h1>
+<Layout title="monody's notes">
+  <div class="container px-3 py-24">
+    <h1 class="text-4xl font-instrument-serif">
+      Take<span class="italic">away</span>
+    </h1>
+    <p>
+      I'd like a <em>double espresso</em>, please.
+    </p>
+    <div class="pt-12">
+      <ul class="space-y-4">
+        {
+          content.map((entry) => (
+            <li class="border-b border-border pb-4">
+              <a href={`/notes/${entry.slug}`}>
+                <span class="text-subtle">{entry.data.date} —</span>
+                {entry.data.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </div>
 </Layout>

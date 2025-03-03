@@ -1,0 +1,36 @@
+---
+import "../../styles/prose.css";
+
+import { getCollection, render } from "astro:content";
+import Layout from "src/layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("notes");
+  return entries.map((entry) => ({
+    params: { slug: entry.filePath?.split("/").pop()?.split(".")[0] },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Layout
+  title={`${entry.data.title} — monody's notes`}
+  description={entry.data.excerpt ?? entry.body?.slice(0, 150)}
+>
+  <div class="container px-3 py-24">
+    <div class="text-subtle">
+      on
+      <span class="lowercase">{entry.data.date}</span>
+      <a href="/notes" class="text-primary">i taked</a>...
+    </div>
+    <h1 class="text-4xl font-semibold mb-5">
+      {entry.data.title}
+    </h1>
+    <article class="prose">
+      <Content />
+    </article>
+  </div>
+</Layout>
