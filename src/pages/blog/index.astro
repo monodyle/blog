@@ -3,10 +3,15 @@ import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const content = (await getCollection("blog"))
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf())
   .map((post) => ({
     ...post,
     slug: post.filePath?.split("/").pop()?.split(".")[0],
+    date: new Date(post.data.date).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    }),
   }));
 ---
 
@@ -21,9 +26,9 @@ const content = (await getCollection("blog"))
     <ul>
       {
         content.map((post) => (
-          <li class="ml-2 pl-8 border-l border-border inline-block py-4">
+          <li class="py-4">
             <span class="text-subtle text-xs">
-              {post.data.date}
+              {post.date}
             </span>
             <h2 class="text-2xl font-serif">
               <a href={`/blog/${post.slug}`}>{post.data.title}</a>
