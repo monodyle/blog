@@ -328,17 +328,14 @@
 .prose tt,
 .prose code,
 .prose samp {
-  font-family: "Iosevka Mono", ui-monospace, SFMono-Regular, SF Mono, Menlo,
-    Consolas, "Liberation Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 12px;
 }
 
 .prose pre {
   margin-top: 0;
   margin-bottom: 0;
-  font-family: "Iosevka Mono", ui-monospace, SFMono-Regular, SF Mono, Menlo,
-    Consolas, "Liberation Mono", monospace;
-  font-size: 12px;
+  font-family: var(--font-mono);
   word-wrap: normal;
 }
 
@@ -696,11 +693,11 @@
 .prose .highlight pre,
 .prose pre {
   overflow: auto;
-  padding: 16px;
-  font-size: 1rem;
-  line-height: normal;
-  background-color: var(--color-7);
-  border-radius: 0 0 6px 6px;
+  padding: 1rem;
+  font-size: 0.85rem;
+  line-height: 1.3;
+  @apply bg-elevated/20;
+  border-radius: 8px;
 }
 
 .prose pre code,
