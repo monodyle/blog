@@ -27,6 +27,24 @@
   ::selection {
     background-color: oklch(90.16% 0.0192 248.04);
   }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: oklch(14.48% 0 0 / 10%);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background: oklch(14.48% 0 0 / 20%);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(14.48% 0 0 / 30%);
+  }
 }
 
 @layer utilities {
