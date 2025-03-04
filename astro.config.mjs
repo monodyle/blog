@@ -6,6 +6,7 @@ import markdown from './src/lib/markdown/markdown'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://minhle.space',
+  prefetch: true,
   integrations: [mdx()],
   markdown,
   vite: {

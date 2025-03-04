@@ -31,7 +31,9 @@ const content = (await getCollection("blog"))
           <li class="py-4">
             <span class="text-subtle text-xs">{entry.date}</span>
             <h2 class="text-2xl font-serif font-medium">
-              <a href={`/blog/${entry.slug}`}>{entry.data.title}</a>
+              <a href={`/blog/${entry.slug}`} data-astro-prefetch>
+                {entry.data.title}
+              </a>
             </h2>
             <p class="text-subtle">{entry.data.excerpt}</p>
           </li>

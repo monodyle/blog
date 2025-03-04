@@ -22,7 +22,7 @@ const { Content } = await render(entry);
     <div class="text-subtle">
       on
       <span class="lowercase">{entry.data.date}</span>
-      <a href="/notes" class="text-primary">i took</a>...
+      <a href="/notes" data-astro-prefetch class="text-primary">i took</a>...
     </div>
     <h1 class="text-4xl font-semibold mb-5 font-serif">
       {entry.data.title}

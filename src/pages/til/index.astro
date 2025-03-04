@@ -3,7 +3,9 @@ import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const content = (await getCollection("til"))
-  .sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf())
+  .sort(
+    (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
+  )
   .map((entry) => ({
     ...entry,
     slug: entry.filePath?.split("/").pop()?.split(".")[0],
@@ -25,7 +27,7 @@ const content = (await getCollection("til"))
         {
           content.map((entry) => (
             <li class="border-b border-border pb-4">
-              <a href={`/til/${entry.slug}`}>
+              <a href={`/til/${entry.slug}`} data-astro-prefetch>
                 <span class="text-subtle text-sm">{entry.data.date} —</span>
                 <span class="font-medium font-serif">{entry.data.title}</span>
               </a>
