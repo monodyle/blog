@@ -1,17 +1,17 @@
 import type { AstroUserConfig } from 'astro'
 import { h } from 'hastscript'
-import rehypeDocument from 'rehype-document'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypeCustomEmoji from 'rehype-custom-emoji'
 import rehypeExternalLinks from 'rehype-external-links'
 import rehypeKatex from 'rehype-katex'
+import rehypeSlug from 'rehype-slug'
 import rehypeStringify from 'rehype-stringify'
 import rehypeToc from 'rehype-toc'
 import remarkMath from 'remark-math'
 import remarkParse from 'remark-parse'
-import rehypeSlug from 'rehype-slug'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import { lightTheme } from './shiki-theme'
 
-/* export const emojis: Record<string, string> = {
+export const emojis: Record<string, string> = {
   adore: '/assets/emoji/adore.png',
   argggg: '/assets/emoji/argggg.png',
   christ: '/assets/emoji/christ.png',
@@ -37,7 +37,7 @@ import { lightTheme } from './shiki-theme'
   sosad: '/assets/emoji/sosad.gif',
   nosebleed: '/assets/emoji/nosebleed.png',
   smoke: '/assets/emoji/smoke.png',
-} */
+}
 
 const markdown: AstroUserConfig['markdown'] = {
   syntaxHighlight: 'shiki',
@@ -50,11 +50,8 @@ const markdown: AstroUserConfig['markdown'] = {
   gfm: true,
   remarkPlugins: [remarkParse, remarkMath],
   rehypePlugins: [
+    [rehypeCustomEmoji, { emojis }],
     rehypeKatex,
-    [
-      rehypeDocument,
-      { css: 'https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css' },
-    ],
     rehypeSlug,
     [
       rehypeAutolinkHeadings,
