@@ -42,6 +42,7 @@
     const fragmentShader = `
   uniform vec2 u_resolution;
   uniform float u_time;
+  uniform float u_fadeIn;
 
   float random(vec2 st) {
     return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123);
@@ -77,7 +78,7 @@
     float gradientMask = topFade * bottomFade;
     gradientMask = gradientMask * (0.8 + noiseAlpha * 0.2);
 
-    float alpha = gradientMask * noiseAlpha;
+    float alpha = gradientMask * noiseAlpha * u_fadeIn;
 
     vec3 color = gradient;
 
@@ -91,6 +92,7 @@
           value: new THREE.Vector2(window.innerWidth, window.innerHeight),
         },
         u_time: { value: 0.0 },
+        u_fadeIn: { value: 0.0 },
       },
       vertexShader: vertexShader,
       fragmentShader: fragmentShader,
@@ -104,6 +106,10 @@
     function animate() {
       requestAnimationFrame(animate);
       material.uniforms.u_time.value += 0.02;
+      material.uniforms.u_fadeIn.value = Math.min(
+        1.0,
+        material.uniforms.u_fadeIn.value + 0.01,
+      );
       renderer.render(scene, camera);
     }
     animate();
