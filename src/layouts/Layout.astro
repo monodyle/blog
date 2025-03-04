@@ -1,7 +1,8 @@
 ---
+import { ClientRouter } from "astro:transitions";
 import Header from "./Header.astro";
-import "../styles/global.css";
 import Footer from "./Footer.astro";
+import "../styles/global.css";
 
 export type Props = {
   title?: string;
@@ -60,6 +61,7 @@ const {
       integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib"
       crossorigin="anonymous"
     />
+    <ClientRouter />
   </head>
   <body class="min-h-screen bg-base text-primary font-sans">
     <Header />

@@ -6,38 +6,40 @@
 
 <script>
   import * as THREE from "three";
+  document.addEventListener("astro:page-load", () => {
+    const scene = new THREE.Scene();
+    const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+    const renderer = new THREE.WebGLRenderer({ alpha: true });
+    const hero = document.getElementById("hero");
 
-  const scene = new THREE.Scene();
-  const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
-  const renderer = new THREE.WebGLRenderer({ alpha: true });
-  const hero = document.getElementById("hero")!;
+    if (!hero) return;
 
-  // Ensure hero has position relative so the absolute canvas stays within it
-  hero.style.position = "relative";
-  hero.style.overflow = "hidden";
+    // Ensure hero has position relative so the absolute canvas stays within it
+    hero.style.position = "relative";
+    hero.style.overflow = "hidden";
 
-  renderer.setSize(hero.clientWidth, hero.clientHeight);
-  renderer.setClearColor(0x000000, 0);
+    renderer.setSize(hero.clientWidth, hero.clientHeight);
+    renderer.setClearColor(0x000000, 0);
 
-  const canvas = renderer.domElement;
-  canvas.style.position = "absolute";
-  canvas.style.top = "0";
-  canvas.style.left = "0";
-  canvas.style.width = "100%";
-  canvas.style.height = "100%";
-  canvas.style.pointerEvents = "none";
+    const canvas = renderer.domElement;
+    canvas.style.position = "absolute";
+    canvas.style.top = "0";
+    canvas.style.left = "0";
+    canvas.style.width = "100%";
+    canvas.style.height = "100%";
+    canvas.style.pointerEvents = "none";
 
-  hero.prepend(canvas);
+    hero.prepend(canvas);
 
-  const geometry = new THREE.PlaneGeometry(2, 2);
+    const geometry = new THREE.PlaneGeometry(2, 2);
 
-  const vertexShader = `
+    const vertexShader = `
   void main() {
     gl_Position = vec4(position, 1.0);
   }
 `;
 
-  const fragmentShader = `
+    const fragmentShader = `
   uniform vec2 u_resolution;
   uniform float u_time;
 
@@ -83,35 +85,36 @@
   }
 `;
 
-  const material = new THREE.ShaderMaterial({
-    uniforms: {
-      u_resolution: {
-        value: new THREE.Vector2(window.innerWidth, window.innerHeight),
+    const material = new THREE.ShaderMaterial({
+      uniforms: {
+        u_resolution: {
+          value: new THREE.Vector2(window.innerWidth, window.innerHeight),
+        },
+        u_time: { value: 0.0 },
       },
-      u_time: { value: 0.0 },
-    },
-    vertexShader: vertexShader,
-    fragmentShader: fragmentShader,
-    transparent: true,
-  });
+      vertexShader: vertexShader,
+      fragmentShader: fragmentShader,
+      transparent: true,
+    });
 
-  // Create the mesh and add it to the scene
-  const mesh = new THREE.Mesh(geometry, material);
-  scene.add(mesh);
+    // Create the mesh and add it to the scene
+    const mesh = new THREE.Mesh(geometry, material);
+    scene.add(mesh);
 
-  function animate() {
-    requestAnimationFrame(animate);
-    material.uniforms.u_time.value += 0.02;
-    renderer.render(scene, camera);
-  }
-  animate();
+    function animate() {
+      requestAnimationFrame(animate);
+      material.uniforms.u_time.value += 0.02;
+      renderer.render(scene, camera);
+    }
+    animate();
 
-  // Handle window resizing
-  window.addEventListener("resize", () => {
-    renderer.setSize(hero.clientWidth, hero.clientHeight);
-    material.uniforms.u_resolution.value.set(
-      window.innerWidth,
-      window.innerHeight,
-    );
+    // Handle window resizing
+    window.onresize = () => {
+      renderer.setSize(hero.clientWidth, hero.clientHeight);
+      material.uniforms.u_resolution.value.set(
+        window.innerWidth,
+        window.innerHeight,
+      );
+    };
   });
 </script>
