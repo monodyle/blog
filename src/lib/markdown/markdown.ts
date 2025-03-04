@@ -1,14 +1,14 @@
 import type { AstroUserConfig } from 'astro'
+import { h } from 'hastscript'
 import rehypeDocument from 'rehype-document'
 import rehypeExternalLinks from 'rehype-external-links'
 import rehypeKatex from 'rehype-katex'
 import rehypeStringify from 'rehype-stringify'
 import rehypeToc from 'rehype-toc'
-import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
 import remarkParse from 'remark-parse'
-import remarkRehype from 'remark-rehype'
-import { markdownHeading } from './heading'
+import rehypeSlug from 'rehype-slug'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import { lightTheme } from './shiki-theme'
 
 /* export const emojis: Record<string, string> = {
@@ -44,21 +44,27 @@ const markdown: AstroUserConfig['markdown'] = {
   shikiConfig: {
     theme: lightTheme,
   },
-  remarkPlugins: [
-    remarkParse as unknown as string,
-    remarkMath,
-    remarkGfm,
-    [remarkRehype as unknown as string, { allowDangerousHtml: true }],
-  ],
+  remarkRehype: {
+    allowDangerousHtml: true,
+  },
+  gfm: true,
+  remarkPlugins: [remarkParse, remarkMath],
   rehypePlugins: [
     rehypeKatex,
     [
       rehypeDocument,
       { css: 'https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css' },
     ],
-    markdownHeading as unknown as string,
+    rehypeSlug,
+    [
+      rehypeAutolinkHeadings,
+      {
+        behavior: 'prepend',
+        content: [h('span.anchor', { ariaHidden: true })],
+      },
+    ],
     rehypeToc as unknown as string,
-    [rehypeStringify as unknown as string, { allowDangerousHtml: true }],
+    [rehypeStringify, { allowDangerousHtml: true }],
     [rehypeExternalLinks, { target: '_blank', rel: ['noopener noreferrer'] }],
   ],
 }
