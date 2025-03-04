@@ -436,6 +436,7 @@
 .prose h4,
 .prose h5,
 .prose h6 {
+  @apply scroll-mt-16;
   display: inline-block;
 }
 
@@ -760,6 +761,10 @@
   font-weight: 600;
   background: var(--color-background);
   border-top: 0;
+}
+
+.prose a[data-footnote-ref] {
+  @apply scroll-mt-16;
 }
 
 .prose a[data-footnote-ref]::before {
