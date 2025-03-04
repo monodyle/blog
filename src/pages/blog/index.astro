@@ -30,7 +30,7 @@ const content = (await getCollection("blog"))
         content.map((entry) => (
           <li class="py-4">
             <span class="text-subtle text-xs">{entry.date}</span>
-            <h2 class="text-2xl font-serif">
+            <h2 class="text-2xl font-serif font-medium">
               <a href={`/blog/${entry.slug}`}>{entry.data.title}</a>
             </h2>
             <p class="text-subtle">{entry.data.excerpt}</p>
