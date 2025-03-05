@@ -4,6 +4,7 @@ title: Ngẫm — Đời về cơ bản là buồn
 excerpt: 'Trước khi đi vào vấn đề, tôi có một câu hỏi đơn giản dành cho các bạn: "Bạn là ai?". Chậm đã, đây không phải là một cuộc phỏng vấn, vì vậy tôi không tìm kiếm những câu trả lời đại loại như: “Tôi là một người nghiêm túc tìm kiếm sự thành đạt. Tôi thích dành thời gian cho công việc, gia đình và bạn bè”. - Cái câu trả lời mà gần như 80% mấy ông đi xin việc đều mở mồm ra là hót một bài như vậy.'
 image: /assets/blog/doi-ve-co-ban-la-buon/featured.jpg
 tags: ['life', 'opinion', 'thinking']
+public: false
 ---
 
 Hello, seri **Ngẫm** này mình rewrite từ seri **Madness Things That I Think** từ trước, chủ yếu là để migrate qua blog này cũng như chau chuốt lại câu từ, sửa một vài nội dung không phù hợp.

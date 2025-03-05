@@ -14,10 +14,14 @@ const _baseSchema = z.object({
 
 const blog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './content/blog' }),
-  schema: _baseSchema.transform((data) => ({
-    ...data,
-    type: 'blog',
-  })),
+  schema: _baseSchema
+    .extend({
+      public: z.boolean().optional(),
+    })
+    .transform((data) => ({
+      ...data,
+      type: 'blog',
+    })),
 })
 
 const til = defineCollection({

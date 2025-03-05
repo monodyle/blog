@@ -2,6 +2,7 @@ import { getCollection } from 'astro:content'
 
 export async function getBlogCollection() {
   const content = (await getCollection('blog'))
+    .filter((entry) => entry.data.public !== false)
     .sort(
       (a, b) =>
         new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
