@@ -25,7 +25,7 @@ Sort callback: `comparefn(a, b)`
 
 [^3]: https://tc39.es/ecma262/multipage/indexed-collections.html#sec-array.prototype.sort
 
-So the `comparefn` **"expect"** you to return negative number, zero, or positive number.
+So the `comparefn` **expect** you to return **negative number, zero, or positive number**.
 But you can return any other type without any error (runtime or default linter setting).
 
 Firefox and Chromium/Node have a difference arguments order (reversed):
