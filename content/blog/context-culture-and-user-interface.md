@@ -8,24 +8,28 @@ image: /assets/blog/context-culture-and-user-interface/featured.png
 tags: [talk, ui]
 ---
 
-Có một dạo mình nghiện uống cafe, cộng thêm việc đêm dài khó ngủ, nhiều suy nghĩ ngớ ngẩn cứ lẩn quẩn trong đầu. Một đêm trăng thanh gió mát nào đó, mình thắc mắc tại sao một cử chỉ hay đôi ba lời nói lại có thể được hiểu theo nhiều cách khác nhau ở các quốc gia khác nhau? Như việc sử dụng ngón cái 👍 của mình là cổ vũ hoặc đồng ý về một việc gì đó, nhưng ở Trung Đông họ lại xem nó như việc bạn giơ ngón giữa vào mặt họ[^1]?
+Có một dạo mình nghiện cafe, cộng thêm việc đêm dài khó ngủ, nhiều suy nghĩ ngớ ngẩn cứ lẩn quẩn trong đầu. Một đêm trăng thanh gió mát nào đó, mình thắc mắc tại sao một cử chỉ hay đôi ba lời nói lại có thể được hiểu theo nhiều cách khác nhau ở các quốc gia khác nhau?
+
+Như việc sử dụng ngón cái 👍 của mình là cổ vũ hoặc đồng ý về một việc gì đó, nhưng ở Trung Đông họ lại xem nó như việc bạn giơ ngón giữa vào mặt họ[^1]?
 
 [^1]: https://slate.com/news-and-politics/2003/03/what-does-a-thumbs-up-mean-in-iraq.html
 
-Tại sao một chiến dịch quảng cáo thương mại đã từng rất thành công ở Mỹ như "Finger-lickin’ good" của KFC[^2], hay "Pepsi brings you back to life" của Pepsi[^3], khi đem về một thị trường như Trung Quốc lại trở thành tâm điểm của một chiến dịch tệ hại trên mạng xã hội?
+Tại sao một chiến dịch quảng cáo thương mại đã từng rất thành công ở Mỹ như *Finger-lickin’ good* của KFC[^2], hay *Pepsi brings you back to life* của Pepsi[^3], khi đem về một thị trường như Trung Quốc lại trở thành tâm điểm như một chiến dịch truyền thông tệ hại trên mạng xã hội?
 
 [^2]: https://www.creativereview.co.uk/its-finger-lickin-good-slogan-kfc/
 [^3]: https://www.snopes.com/fact-check/come-alive/
 
-Nói xa xôi là thế, lấy ví dụ gần gũi hơn là việc mình và mẹ lâu lâu hay nói về một cái vấn đề gì đấy nhức nhối trong xã hội, mẹ mình thì xem đấy là những thứ tiêu cực, nhưng mình đứng ở góc độ một phần của cái xã hội nhức nhối đấy thì lại không nghĩ như thế... :smug: Ngược lại, nhiều lần mẹ mình dặn dò về chuyện hãy giữ sức khoẻ, lúc mình còn trẻ thì thấy mấy cái đó chả có gì to tát lắm, mà sao người lớn nhắc hoài, phiền ghê, nhưng dạo gần đây tới lúc cơ thể không còn linh hoạt như hồi đôi mươi nữa, tự dưng lại thấy lời mẹ khuyên ngày trước không lệch đi đâu được.
+Nói xa xôi là thế, ví dụ gần gũi hơn là việc mình và mẹ khi nói về một cái vấn đề gì đấy nhức nhối trong xã hội, mẹ mình thì xem đấy là những thđiều tiêu cực, nhưng mình đứng ở góc độ một phần của cái xã hội nhức nhối đấy thì lại không nghĩ như thế... :smug:
 
-Dù ít dù nhiều, những thứ trên đều những vấn đề chúng ta thường xuyên gặp phải khi giao tiếp. Đó là việc ngữ cảnh giao tiếp khác nhau.
+Ngược lại, nhiều lần mẹ hay dặn dò về chuyện sức khoẻ, lúc trẻ thì thấy mấy cái đó có gì to tát lắm đâu mà sao người lớn nhắc hoài, phiền ghê, nhưng gần đây cơ thể không còn linh hoạt như hồi đôi mươi nữa, tự dưng lại thấy lời mẹ khuyên ngày trước không cãi được.
+
+Dù ít dù nhiều, những thứ trên đều những vấn đề mà chúng ta thường xuyên gặp phải khi giao tiếp trong xã hội ngày nay. Đó là việc ngữ cảnh giao tiếp khác nhau.
 
 ## Giao tiếp trong xã hội hiện đại
 
-Hồi còn mài đít trên ghế nhà trường, học tới mấy bài lịch sử về việc con người tạo ra chữ viết cổ đại, mình nhìn mãi mà không hiểu tại sao chúng ta có thể tiến hoá được tới chữ viết như ngày hôm nay, và tại sao mỗi khu vực lại có một ngôn ngữ, mà sự khác biệt giữa các ngôn ngữ nhiều lúc lại lớn tới như vậy? Tại sao người ta không thống nhất chung một loại ngôn ngữ để dùng giao tiếp cho dễ? Đỡ tốn công mình đi thi tiếng anh :sad:
+Hồi còn mài đít trên ghế nhà trường, học tới mấy bài lịch sử về việc con người tạo ra chữ viết cổ đại, mình nhìn mãi mà không hiểu tại sao chúng ta có thể tiến hoá được tới chữ viết như ngày hôm nay, và tại sao mỗi khu vực lại có một ngôn ngữ, mà sự khác biệt giữa các ngôn ngữ nhiều lúc lại lớn tới như vậy? Tại sao người ta không thống nhất chung một loại ngôn ngữ để dùng giao tiếp cho dễ? Đỡ tốn công mình đi thi chứng chỉ tiếng anh :sad:
 
-Và cứ nghĩ vẩn vơ như thế làm nhiều đêm mất ngủ, dần dần mình trở thành một con gấu trúc, mình vẫn chưa hiểu được tại sao :yaomin: Nhưng thay vì mình đi tìm câu trả lời, mình đi tìm những kỳ quan mà con người đã đạt được. Việc giao tiếp trong xã hội hiện đại không còn đơn thuần chỉ là lời nói (verbal), mà nó còn nhiều hơn là những cử chỉ (gestures), hình thể (body language), và cả không lời (non-verbal). Những yếu tố này kết hợp tạo thành những sắc thái khiến cho ý nghĩa của thông điệp có thể thay đổi khi đặt vào những ngữ cảnh khác nhau.
+Và cứ nghĩ vẩn vơ như thế khiến nhiều đêm mất ngủ, dần dần mình trở thành một con gấu trúc, mình vẫn chưa hiểu được tại sao :yaomin: Nhưng thay vì mình đi tìm câu trả lời, mình tìm kiếm những kỳ quan mà con người đã đạt được. Việc giao tiếp trong xã hội hiện đại không còn đơn thuần chỉ là lời nói (*verbal*), mà nó còn nhiều hơn là những cử chỉ (*gestures*), hình thể (*body language*), và cả không lời (*non-verbal*). Những yếu tố này kết hợp tạo thành những sắc thái khiến cho ý nghĩa của thông điệp có thể thay đổi khi đặt vào những ngữ cảnh khác nhau.
 
 Ví dụ, trong văn hoá Á Đông, mình và bạn đi trên đường gặp nhau có thể gật đầu để thay lời chào. Nhưng cũng cái gật đầu, các bạn có thể xem video dưới đây[^8]:
 
@@ -35,17 +39,13 @@ Ví dụ, trong văn hoá Á Đông, mình và bạn đi trên đường gặp n
 
 [^8]: Nguồn: https://9gag.com/gag/amvMyOy
 
-<small><em>(Chỉ tay có nghĩa là "nữa không", chỉ tay có nghĩa là "ông thì sao?", gật đầu có nghĩa là "có" hoặc "nữa", gật đầu có nghĩa là "cảm ơn", và gật đầu có nghĩa là "không có gì").</em></small>
-
-Hay, bạn đã từng nghe tới từ "nho thâm" chưa? Hoặc, có bao giờ bạn ở trong một cuộc trò chuyện, mà nghe một lúc cảm thấy mình như người ngoài vì không hiểu gì chưa?
-
-Sau nhiều đêm bị cafein hành hạ, mình đã tìm hiểu được một khái niệm khá thú vị, đó là **[High-context and low-context cultures]** (*Văn hoá ngữ cảnh cao & ngữ cảnh thấp* hoặc *Văn hoá giàu ngữ cảnh & nghèo ngữ cảnh*).
+Sau nhiều đêm bị cafein hành hạ, mình đã tìm được một khái niệm khá thú vị, đó là **[High-context and low-context cultures]** (*Văn hoá ngữ cảnh cao & ngữ cảnh thấp* hoặc *Văn hoá giàu ngữ cảnh & nghèo ngữ cảnh*).
 
 [High-context and low-context cultures]: https://en.wikipedia.org/wiki/High-context_and_low-context_cultures
 
-### Văn hoá ngữ cảnh cao (giàu ngữ cảnh)
+### Văn hoá ngữ cảnh cao
 
-Trong nền văn hóa giàu ngữ cảnh, phần lớn ý nghĩa của thông điệp không nằm trực tiếp trong lời nói, mà ẩn giấu trong bối cảnh, mối quan hệ và kỷ niệm chung giữa những người trong giao tiếp, truyền thống văn hóa và môi trường phát triển của từng cá nhân.
+Trong văn hóa giàu ngữ cảnh, phần lớn ý nghĩa của thông điệp không nằm trực tiếp trong lời nói, mà ẩn giấu trong bối cảnh, mối quan hệ và kỷ niệm chung giữa những người trong giao tiếp, truyền thống văn hóa và môi trường phát triển của từng cá nhân.
 
 Nói cách khác, giao tiếp trong môi trường giàu ngữ cảnh phụ thuộc nhiều vào sự hiểu biết ngầm, tín hiệu phi ngôn ngữ, biểu tượng, và hàm ý. Dân gian gọi là ẩn dụ, hoặc ẩn ý.
 
@@ -53,7 +53,9 @@ Khi tham gia giao tiếp trong môi trường này, mình thường phải sử 
 
 Ví dụ điển hình là các nước đồng văn, Á Đông, như Trung Quốc, Nhật Bản, Hàn Quốc,... Ở những quốc gia này, mối quan hệ cá nhân, tôn ti trật tự xã hội, mối quan hệ trong tập thể, bối cảnh, thời gian, không gian đều đóng vai trò then chốt trong việc truyền tải ý nghĩa của thông điệp.
 
-### Văn hoá ngữ cảnh thấp (nghèo ngữ cảnh)
+![Tranh thuỷ mặc Trung Quốc](https://upload.wikimedia.org/wikipedia/commons/c/cd/Li_Cheng%2C_Luxuriant_Forest_among_Distant_Peaks.jpg)
+
+### Văn hoá ngữ cảnh thấp
 
 Trái lại, trong các nền văn hóa ngữ cảnh thấp, ý nghĩa thông điệp được trình bày rõ ràng, trực tiếp và đa phần dựa vào lời nói hoặc văn bản. Người giao tiếp hiếm khi cần suy diễn, hoặc phân tích quá nhiều tín hiệu ngầm. Thông tin cần thiết thường được biểu đạt một cách cụ thể, minh bạch và dễ hiểu.
 
@@ -61,11 +63,13 @@ Hiệu quả giao tiếp nằm ở khả năng diễn đạt ý tưởng một c
 
 Điển hình là các nước phương Tây, như Mỹ, Đức, hoặc các quốc gia Bắc Âu,...
 
-### Giàu & nghèo
+![Tranh phương tây](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Meisje_met_de_parel.jpg/1024px-Meisje_met_de_parel.jpgT)
 
-Mặc dù từ giàu/nghèo hoặc cao/thấp mang khá nhiều tính tiêu cực tích cực về mặt từ ngữ. Nhưng nó thể hiện được độ ảnh hưởng ít nhiều của ngữ cảnh trong câu chuyện.
+### Cao - Thấp, Giàu - Nghèo
 
-Nói như vậy, không có nghĩa là người phương Đông lúc nào cũng thâm như nho, hay người phương Tây lúc nào cũng thẳng như ruột ngựa. Như mình đã kể một vài ví dụ ở đầu bài, việc ngữ cảnh cao hay thấp cũng xuất hiện trong các xã hội thu nhỏ hơn, hoặc nhiều hoàn cảnh khác biệt hơn.
+Mặc dù từ giàu - nghèo hoặc cao - thấp mang khá nhiều tính tiêu cực tích cực về mặt từ ngữ. Nhưng nó thể hiện được độ ảnh hưởng ít nhiều của ngữ cảnh trong câu chuyện.
+
+Nói không có nghĩa là người phương Đông lúc nào cũng thâm như nho, hay người phương Tây lúc nào cũng thẳng như ruột ngựa. Như mình đã kể một vài ví dụ ở đầu bài, việc ngữ cảnh cao hay thấp cũng xuất hiện trong các xã hội thu nhỏ hơn, nhiều hoàn cảnh khác biệt hơn.
 
 Ví dụ, người thuộc thế hệ Gen X hoặc Gen Y sẽ có những ngữ cảnh, câu đùa mà chỉ thế hệ của họ mới hiểu, và họ khó thể nào hiểu được slang của Gen Z hoặc Gen Alpha, và ở chiều ngược lại cũng thế.
 
@@ -73,7 +77,7 @@ Hoặc, mình có thể quảng cáo áo bông với cái slogan "Tháng 12 đã
 
 Ngoài ngụ ý trong lời nói, các cuộc giao tiếp giàu ngữ cảnh thường có thể là một vấn đề chưa rõ ràng, cần được đánh giá dựa trên nhiều ngữ cảnh, hay một vấn đề có nhiều góc nhìn đa chiều cần được xem xét.
 
-## Ảnh hưởng của văn hoá ngữ cảnh đến thiết kế giao diện người dùng
+## Ảnh hưởng của văn hoá giao tiếp đến thiết kế giao diện người dùng
 
 Trong công việc của mình cũng có liên quan ít nhiều tới vấn đề này. Hôm nọ thằng bạn mình có hỏi "*Tại sao app Trung Quốc hay làm super-app, cái gì cũng có, nhưng app của mấy anh Tây nhiều khi mở lên cũng chỉ có một tính năng duy nhất, ấy thế mà vẫn cả triệu người dùng?*"
 
