@@ -10,19 +10,19 @@ const _baseSchema = z.object({
 })
 
 const blog = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
+  loader: glob({ pattern: '**/*.md', base: './content/blog' }),
   schema: _baseSchema.extend({
     image: z.string().optional(),
   }),
 })
 
 const til = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/til' }),
+  loader: glob({ pattern: '**/*.md', base: './content/til' }),
   schema: _baseSchema,
 })
 
 const notes = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/notes' }),
+  loader: glob({ pattern: '**/*.md', base: './content/notes' }),
   schema: _baseSchema,
 })
 
