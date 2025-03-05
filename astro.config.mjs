@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config'
 import tailwindcss from '@tailwindcss/vite'
 import mdx from '@astrojs/mdx'
-import markdown from './src/lib/markdown/markdown'
+import markdown from './src/lib/markdown'
 
 // https://astro.build/config
 export default defineConfig({
