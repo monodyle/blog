@@ -9,6 +9,9 @@ In economics, the **Jevons paradox**[^1] (*/ˈdʒɛvənz/*; sometimes **Jevons e
 
 [^1]: https://en.wikipedia.org/wiki/Jevons_paradox
 
+![](/assets/til/sketchplanations-jevons-paradox.jpg)
+<small><em>Image: Jono Hey, [Sketchplanations](https://sketchplanations.com/jevons-paradox)</em></small>
+
 *Case study:*
 
 You're switching from a car that gets 10 kilometers per liter to one that gets 20. The initial savings make you feel like you're being more efficient, so you drive more frequently, perhaps for leisure or convenience. This increase driving, driven by the feeling of efficiency, leads to higher overall gas consumption. It's illustrating the Jevons paradox.

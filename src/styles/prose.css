@@ -82,6 +82,15 @@
   border-radius: 4px;
 }
 
+.prose img + small:has(> em) {
+  display: block;
+  text-align: center;
+  max-width: 75%;
+  margin: 0 auto;
+  padding: 4px;
+  text-wrap: balance;
+}
+
 .prose video {
   border-radius: 4px;
 }
