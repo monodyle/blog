@@ -12,6 +12,8 @@ const _baseSchema = z.object({
 const blog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './content/blog' }),
   schema: _baseSchema.extend({
+    illustration: z.string().optional(),
+    color: z.string().optional(),
     image: z.string().optional(),
   }),
 })

@@ -1,11 +1,12 @@
 ---
-import { getCollection, render } from "astro:content";
+import { render } from "astro:content";
 import Layout from "src/layouts/Layout.astro";
+import { getTilCollection } from "src/lib/content";
 
 export async function getStaticPaths() {
-  const entries = await getCollection("til");
+  const entries = await getTilCollection();
   return entries.map((entry) => ({
-    params: { slug: entry.filePath?.split("/").pop()?.split(".")[0] },
+    params: { slug: entry.slug },
     props: { entry },
   }));
 }
@@ -21,16 +22,13 @@ const { Content } = await render(entry);
   <div class="container px-3 py-24">
     <div class="text-subtle">
       on
-      <span class="lowercase" transition:name="til_date">
+      <span class="lowercase">
         {entry.data.date}
       </span>
       <a href="/til" data-astro-prefetch class="text-primary"> i learned </a>
       ...
     </div>
-    <h1
-      class="text-4xl font-semibold mb-5 font-serif"
-      transition:name="til_title"
-    >
+    <h1 class="text-4xl font-semibold mb-5 font-serif">
       {entry.data.title}
     </h1>
     <article class="prose">

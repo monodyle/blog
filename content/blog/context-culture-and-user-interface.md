@@ -2,6 +2,8 @@
 title: Văn hoá giao tiếp & Giao diện người dùng
 excerpt: Sao người ta không nói một loại ngôn ngữ thôi cho mình đỡ phải đi thi IELTS nhỉ?
 date: Dec 14, 2024
+illustration: /assets/blog/context-culture-and-user-interface/illustration.png
+color: '#e3e2dc'
 image: /assets/blog/context-culture-and-user-interface/featured.png
 tags: [talk, ui]
 ---
