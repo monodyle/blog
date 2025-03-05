@@ -1,6 +1,8 @@
 ---
 title: Jevons paradox
 excerpt: Efficiency leads to increased demand
+illustration: /assets/til/jevons-paradox.png
+color: '#dfdfed'
 date: Feb 25, 2025
 tags: [economic]
 ---
@@ -9,7 +11,7 @@ In economics, the **Jevons paradox**[^1] (*/ˈdʒɛvənz/*; sometimes **Jevons e
 
 [^1]: https://en.wikipedia.org/wiki/Jevons_paradox
 
-![](/assets/til/sketchplanations-jevons-paradox.jpg)
+![](/assets/til/jevons-paradox-sketchplanations.jpg)
 <small><em>Image: Jono Hey, [Sketchplanations](https://sketchplanations.com/jevons-paradox)</em></small>
 
 *Case study:*

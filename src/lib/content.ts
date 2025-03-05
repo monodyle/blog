@@ -45,3 +45,15 @@ export async function getNotesCollection() {
     )
   return content
 }
+
+export async function getAllCollections() {
+  const collections = await Promise.all([
+    getBlogCollection(),
+    getTilCollection(),
+    getNotesCollection(),
+  ])
+
+  return collections.flat().sort((a, b) => {
+    return new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+  })
+}

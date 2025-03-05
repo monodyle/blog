@@ -18,6 +18,7 @@ const { Content } = await render(entry);
 <Layout
   title={`${entry.data.title} — monody's til`}
   description={entry.data.excerpt ?? entry.body?.slice(0, 150)}
+  thumbnail={entry.data.image}
 >
   <div class="container px-3 py-24">
     <div class="text-subtle">
