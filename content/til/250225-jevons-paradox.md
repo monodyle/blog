@@ -2,7 +2,7 @@
 title: Jevons paradox
 excerpt: Efficiency leads to increased demand
 illustration: /assets/til/jevons-paradox.png
-color: '#dfdfed'
+color: '#e9e9f1'
 date: Feb 25, 2025
 tags: [economic]
 ---
