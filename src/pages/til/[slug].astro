@@ -21,13 +21,16 @@ const { Content } = await render(entry);
   <div class="container px-3 py-24">
     <div class="text-subtle">
       on
-      <span class="lowercase">{entry.data.date}</span>
-      <a href="/til" data-astro-prefetch class="text-primary">
-        i learned
-      </a>
+      <span class="lowercase" transition:name="til_date">
+        {entry.data.date}
+      </span>
+      <a href="/til" data-astro-prefetch class="text-primary"> i learned </a>
       ...
     </div>
-    <h1 class="text-4xl font-semibold mb-5 font-serif">
+    <h1
+      class="text-4xl font-semibold mb-5 font-serif"
+      transition:name="til_title"
+    >
       {entry.data.title}
     </h1>
     <article class="prose">

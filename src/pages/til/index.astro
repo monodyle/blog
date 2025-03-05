@@ -28,8 +28,12 @@ const content = (await getCollection("til"))
           content.map((entry) => (
             <li class="border-b border-border pb-4">
               <a href={`/til/${entry.slug}`} data-astro-prefetch>
-                <span class="text-subtle text-sm">{entry.data.date} —</span>
-                <span class="font-medium font-serif">{entry.data.title}</span>
+                <span class="text-subtle text-sm" transition:name="til_date">
+                  {entry.data.date} —
+                </span>
+                <h2 class="font-medium font-serif" transition:name="til_title">
+                  {entry.data.title}
+                </h2>
               </a>
             </li>
           ))

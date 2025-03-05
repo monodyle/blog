@@ -26,8 +26,12 @@ const content = (await getCollection("notes"))
           content.map((entry) => (
             <li class="border-b border-border pb-4">
               <a href={`/notes/${entry.slug}`} data-astro-prefetch>
-                <span class="text-subtle text-sm">{entry.data.date} —</span>
-                <span class="font-medium font-serif">{entry.data.title}</span>
+                <span class="text-subtle text-sm" transition:name="note_date">
+                  {entry.data.date} —
+                </span>
+                <h2 class="font-medium font-serif" transition:name="note_title">
+                  {entry.data.title}
+                </h2>
               </a>
             </li>
           ))
