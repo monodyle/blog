@@ -49,10 +49,12 @@ const content = await getTilCollection();
 </style>
 
 <script>
-  document.querySelectorAll("[data-answer]").forEach((element) => {
-    element.addEventListener("click", () => {
-      document.querySelectorAll("[data-answer]").forEach((el) => {
-        el.classList.toggle("revealed", true);
+  document.addEventListener("astro:page-load", () => {
+    document.querySelectorAll("[data-answer]").forEach((element) => {
+      element.addEventListener("click", () => {
+        document.querySelectorAll("[data-answer]").forEach((el) => {
+          el.classList.toggle("revealed", true);
+        });
       });
     });
   });
