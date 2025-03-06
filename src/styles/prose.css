@@ -819,7 +819,8 @@
   top: 240px;
   width: 360px;
   float: right;
-  margin-right: -480px;
+  padding-left: 100px;
+  margin-right: -360px;
   font-size: 16px;
   opacity: 0.25;
   transition: opacity 240ms ease;
