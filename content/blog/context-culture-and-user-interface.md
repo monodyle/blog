@@ -77,7 +77,31 @@ Hoặc, mình có thể quảng cáo áo bông với cái slogan "Tháng 12 đã
 
 Ngoài ngụ ý trong lời nói, các cuộc giao tiếp giàu ngữ cảnh thường có thể là một vấn đề chưa rõ ràng, cần được đánh giá dựa trên nhiều ngữ cảnh, hay một vấn đề có nhiều góc nhìn đa chiều cần được xem xét.
 
-## Ảnh hưởng của văn hoá giao tiếp đến thiết kế giao diện người dùng
+## Ảnh hưởng đến chuyện công sở
+
+Đi làm đôi khi mình cũng hay gặp phải tình trạng này, mọi người làm việc chung với nhau quá lâu dẫn đến chuyện họ luôn ở trong môi trường ngữ cảnh cao, khi người mới vào team rất khó nắm bắt thông tin mà mọi người đề cập, vì ai cũng assuming đối phương hiểu phần lớn những gì mình nói đến. Sở dĩ bởi vì trong tiềm thức của họ khi nói tới keyword thì đã tự ngầm hiểu những tồn đọng xung quanh keyword đó. Phần lớn mọi người đã quen với phong cách làm việc nói ít hiểu nhiều.
+
+Nhưng đối với một người mới, họ chưa được tiếp cận với sản phẩm, chưa gặp những tồn đọng, hoặc vấn đề mà sản phẩm đã gặp phải trước đó, nên đôi khi có thể đưa ra các hướng đi, góc nhìn mà mọi người trong team sẽ không đồng ý, dẫn đến những cuộc xung đột khó giải quyết.
+
+Dĩ nhiên, mình không nói tới chuyện ai đúng ai sai, mà chỉ đưa ra một ví dụ dễ hình dung về sự ảnh hưởng của văn hoá giao tiếp ngữ cảnh tới môi trường công sở.
+
+Nhiều công ty trên thế giới cũng gặp phải tình trạng này, dù lớn dù nhỏ, nên thông thường trong Handbook dành cho nhân viên họ cũng đề cập tới cách giao tiếp sao cho hiệu quả:
+
+> Practices *low context communication* and provides *as much background as possible* when communicating via text to avoid confusion.
+>
+> <small>[GitLab Handbook][gitlab_handbook]</small>
+
+[gitlab_handbook]: https://handbook.gitlab.com/handbook/communication/#top-tips-and-best-practices
+
+> High contexts can be difficult to enter if you are an outsider (because you don't carry the context information internally, and because you can't instantly create close relationships).
+>
+> Low contexts are relatively easy to enter if you are an outsider (because the environment contains much of the information you need to participate, and because can you form relationships fairly soon, and because the important thing is accomplishing a task rather than feeling your way into a relationship).
+>
+> <small>[*Culture at Work*][caw]</small>
+
+[caw]: https://www.culture-at-work.com/highlow.html
+
+## Ảnh hưởng đến thiết kế giao diện người dùng
 
 Trong công việc của mình cũng có liên quan ít nhiều tới vấn đề này. Hôm nọ thằng bạn mình có hỏi "*Tại sao app Trung Quốc hay làm super-app, cái gì cũng có, nhưng app của mấy anh Tây nhiều khi mở lên cũng chỉ có một tính năng duy nhất, ấy thế mà vẫn cả triệu người dùng?*"
 
