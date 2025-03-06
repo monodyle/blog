@@ -43,6 +43,7 @@ const markdown: AstroUserConfig['markdown'] = {
   syntaxHighlight: 'shiki',
   shikiConfig: {
     theme: lightTheme,
+    transformers: [],
   },
   remarkRehype: {
     allowDangerousHtml: true,
