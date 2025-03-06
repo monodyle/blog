@@ -95,12 +95,8 @@
   border-radius: 4px;
 }
 
-.prose video + p > small {
-  display: block;
-  text-align: center;
-  max-width: 75%;
-  margin: 0 auto;
-  text-wrap: balance;
+.prose video:has(+ p) {
+  margin-bottom: 16px;
 }
 
 .prose > p > img {
