@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^4.1.0",
+    "@shikijs/transformers": "^3.1.0",
     "@tailwindcss/vite": "^4.0.9",
     "astro": "^5.4.1",
     "hastscript": "^9.0.1",

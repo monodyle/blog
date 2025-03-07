@@ -10,6 +10,7 @@ import rehypeToc from 'rehype-toc'
 import remarkMath from 'remark-math'
 import remarkParse from 'remark-parse'
 import { lightTheme } from './shiki-theme'
+import { transformerNotationHighlight } from '@shikijs/transformers'
 
 export const emojis: Record<string, string> = {
   adore: '/assets/emoji/adore.png',
@@ -43,7 +44,8 @@ const markdown: AstroUserConfig['markdown'] = {
   syntaxHighlight: 'shiki',
   shikiConfig: {
     theme: lightTheme,
-    transformers: [],
+    // biome-ignore lint/suspicious/noExplicitAny: conflict version
+    transformers: [transformerNotationHighlight() as any],
   },
   remarkRehype: {
     allowDangerousHtml: true,

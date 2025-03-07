@@ -40,7 +40,8 @@ Thông thường, mình (*của quá khứ*) và các bạn (*hoặc không*) s�
 [^intelephense]: Intelephense is a high performance, cross platform PHP language server adhering to the Language Server Protocol (LSP). (https://intelephense.com/)
 
 1. Argument thứ nhất `route` có thể suggest toàn bộ HTTP request của Github API. Ok, cái này đơn giản, mình cũng có thể làm được. Sử dụng union[^2] một đống endpoint đã define sẵn có thể giải quyết việc này:
-```ts {1-6,9}
+```ts
+// [!code highlight:6]
 type Route =
   | 'GET /orgs/{org}/repos'
   | 'POST /orgs/{org}/repos'
@@ -50,7 +51,7 @@ type Route =
 
 function request(
   route: Route,
-  parameters: Record<string, string>
+  parameters: Record<string, string> // [!code highlight]
 ) {
   // ...
 }
@@ -173,7 +174,7 @@ export default routing
 
 Nhưng việc tái sử dụng lại khá phức tạp. Mỗi lần cần viết navigate, mình phải replace cái `[slug]` trong dynamic route `/blog/[slug]` thành cái slug tương ứng, vậy là phải làm như thế này:
 
-```ts {9}
+```ts
 import routing from '#/consts/routing.ts'
 
 function Foo({ slug }) {
@@ -182,7 +183,7 @@ function Foo({ slug }) {
   const handleClick = (e) => {
     e.preventDefault()
     router.push(
-      routing.post.route.replace('[slug]', slug)
+      routing.post.route.replace('[slug]', slug) // [!code highlight]
     )
   }
 
@@ -194,7 +195,7 @@ Dẫn đến việc, đôi khi mình không kiểm soát được việc liệu 
 
 Thế nên mình viết một cái util để làm việc kiểm soát routing cho mình, type level trông sẽ như thế này:
 
-```ts {15}
+```ts
 type Route =
   | '/'
   | '/blog'
@@ -209,7 +210,7 @@ type ParseRouteString<Router> = Router extends `${infer Start}/${infer Rest}`
 type GetRouteParams<Router extends Route> = ParseRouteString<Router>
 
 type Params = GetRouteParams<'/blog/[slug]'>
-//   ^? type Params = { slug: string; }
+//   ^? type Params = { slug: string; } // [!code highlight]
 ```
 
 Để giải thích đơn giản, thì hàm `ParseRouteString` có nhiệm vụ bóc tách raw string ra những phần khác nhau:
@@ -230,12 +231,14 @@ Và tuỳ vào khả năng thiên biến vạn hoá, chúng ta có thể thêm c
 type ParseRouteString<Router> = Router extends `${infer Start}/${infer Rest}`
   ? ParseRouteString<Start> & ParseRouteString<Rest>
   : Router extends `[${infer Param}]`
+    // [!code highlight:3]
     ? Param extends `${infer Name}:${infer Type}`
       ? { [K in Name]: Type extends 'number' ? number : string }
       : { [K in Param]: string }
     : {}
 
 type Params = ParseRouteString<'/repos/[owner]/[repo]/issues/[issue_number:number]'>
+// [!code highlight:2]
 //   ^? { owner: string; } & { repo: string; } & { issue_number: number; }
 //                                                  ^ bây giờ cái này là number
 ```
@@ -276,7 +279,7 @@ const posts = [
 ] as const
 
 type NumberOfPost = Length<typeof posts>
-//   ^? type NumberOfPost = 3
+//   ^? type NumberOfPost = 3 // [!code highlight]
 ```
 
 **Phép cộng trừ:**
@@ -299,9 +302,9 @@ export type Subtract<X extends number, Y extends number> = Counter<X> extends [
 
 // Example
 type AddExample = Add<8, 3>
-//   ^? type AddExample = 11
+//   ^? type AddExample = 11 // [!code highlight]
 type SubtractExample = Subtract<10, 5>
-//   ^? type SubtractExample = 5
+//   ^? type SubtractExample = 5 // [!code highlight]
 ```
 
 ## Tổng kết
