@@ -13,8 +13,16 @@ export type Props = {
 const {
   title = "monody's space",
   description = "welcome to nowhere on internet",
-  thumbnail = "/assets/empty.jpg",
+  thumbnail,
 } = Astro.props;
+
+const defaultThumbnail = "/assets/empty.jpg";
+const openImagePath =
+  Astro.url.pathname === "/"
+    ? defaultThumbnail
+    : (thumbnail ?? `/og${Astro.url.pathname}`);
+
+const openGraphImage = new URL(openImagePath, Astro.url).toString();
 ---
 
 <!doctype html>
@@ -38,14 +46,14 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={Astro.url.href} />
-    <meta property="og:image" content={new URL(thumbnail, Astro.url)} />
+    <meta property="og:image" content={openGraphImage} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={Astro.url} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={new URL(thumbnail, Astro.url)} />
+    <meta property="twitter:image" content={openGraphImage} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

@@ -18,6 +18,7 @@ const content = await render(entry.body ?? '');
 <Layout
   title={`${entry.data.title} — monody's blog`}
   description={entry.data.excerpt ?? entry.body?.slice(0, 150)}
+  thumbnail={entry.data.image}
 >
   <div class="container px-3 py-24">
     <div class="px-6 mb-12 text-center space-y-2">
