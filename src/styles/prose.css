@@ -676,12 +676,13 @@
 
 .prose code,
 .prose tt {
-  padding: 0.2em 0.4em;
+  display: inline-block;
+  padding: 0 0.25em;
   margin: 0;
   font-size: 80%;
   white-space: break-spaces;
   border-radius: 6px;
-  @apply bg-violet/10 text-violet font-mono;
+  @apply bg-violet/10 text-violet/80 font-mono;
 }
 
 .prose code br,
