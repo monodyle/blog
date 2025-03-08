@@ -15,15 +15,15 @@ export async function getStaticPaths() {
 
   const paths = [
     ...blog.map((entry) => ({
-      params: { route: ['blog', entry.slug].join('/') },
+      params: { route: `${['blog', entry.slug].join('/')}.png` },
       props: { entry },
     })),
     ...notes.map((entry) => ({
-      params: { route: ['notes', entry.slug].join('/') },
+      params: { route: `${['notes', entry.slug].join('/')}.png` },
       props: { entry },
     })),
     ...til.map((entry) => ({
-      params: { route: ['til', entry.slug].join('/') },
+      params: { route: `${['til', entry.slug].join('/')}.png` },
       props: { entry },
     })),
   ]

@@ -20,7 +20,7 @@ const defaultThumbnail = "/assets/empty.jpg";
 const openImagePath =
   Astro.url.pathname === "/"
     ? defaultThumbnail
-    : (thumbnail ?? `/og${Astro.url.pathname}`);
+    : (thumbnail ?? `/og${Astro.url.pathname}.png`);
 
 const openGraphImage = new URL(openImagePath, Astro.url).toString();
 ---
