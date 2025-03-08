@@ -1,7 +1,7 @@
 ---
-import { render } from "astro:content";
 import Layout from "src/layouts/Layout.astro";
 import { getNotesCollection } from "src/lib/content";
+import { render } from "src/lib/render";
 
 export async function getStaticPaths() {
   const entries = await getNotesCollection();
@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await render(entry);
+const content = await render(entry.body ?? "");
 ---
 
 <Layout
@@ -32,7 +32,7 @@ const { Content } = await render(entry);
       {entry.data.title}
     </h1>
     <article class="prose">
-      <Content />
+      {content}
     </article>
   </div>
 </Layout>

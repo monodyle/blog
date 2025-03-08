@@ -63,7 +63,7 @@ Hiệu quả giao tiếp nằm ở khả năng diễn đạt ý tưởng một c
 
 Điển hình là các nước phương Tây, như Mỹ, Đức, hoặc các quốc gia Bắc Âu,...
 
-![Tranh phương tây](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Meisje_met_de_parel.jpg/1024px-Meisje_met_de_parel.jpgT)
+![Tranh phương tây](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Meisje_met_de_parel.jpg/1024px-Meisje_met_de_parel.jpg)
 
 ### Cao - Thấp, Giàu - Nghèo
 
