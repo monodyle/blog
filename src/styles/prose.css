@@ -889,3 +889,11 @@
 .prose sup a[aria-describedby="footnote-label"] {
   color: var(--color-subtle);
 }
+
+.prose .github-mention > img {
+  display: inline-block;
+  margin-right: 0.25rem;
+  vertical-align: middle;
+  margin-bottom: 0.15em;
+  border-radius: 50%;
+}

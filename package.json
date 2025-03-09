@@ -15,6 +15,7 @@
     "@tailwindcss/vite": "^4.0.9",
     "astro": "^5.4.1",
     "canvaskit-wasm": "^0.39.1",
+    "hast-util-find-and-replace": "^5.0.1",
     "hastscript": "^9.0.1",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-custom-emoji": "^2.0.0",
@@ -37,6 +38,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@shikijs/types": "^3.1.0",
+    "@types/hast": "^3.0.4",
     "@types/node": "^22.13.10",
     "@types/three": "0.174.0"
   }
