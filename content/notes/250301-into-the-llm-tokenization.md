@@ -11,8 +11,8 @@ Credit to [Deep Dive into LLMs like ChatGPT](https://youtu.be/7xTGNNLPyMI?si=Hc7
 
 ## How do they create tokens?
 
-- Start with crawling data from the internet to build a massive dataset
-- Filter data with classifier to removing part of the data the low performance
+- Starts with crawling data from the internet to build a massive dataset
+- Filter data with classifier to removing part of the data that low performance (noisy, duplicate content, low-quality text, and irrelevant information)
 - Cleaned data will be compressed into something the machine usable
 
 So instead of feeding a raw text into model, it converted into tokens
