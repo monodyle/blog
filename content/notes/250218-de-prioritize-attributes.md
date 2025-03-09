@@ -1,6 +1,6 @@
 ---
 title: De-prioritize attributes
-date: Feb 28, 2025
+date: Feb 18, 2025
 tags: [javascript]
 ---
 
