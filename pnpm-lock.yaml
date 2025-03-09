@@ -38,6 +38,9 @@ importers:
       rehype-external-links:
         specifier: ^3.0.0
         version: 3.0.0
+      rehype-image-caption:
+        specifier: ^2.0.14
+        version: 2.0.14
       rehype-katex:
         specifier: ^7.0.1
         version: 7.0.1
@@ -1629,6 +1632,9 @@ packages:
 
   rehype-external-links@3.0.0:
     resolution: {integrity: sha512-yp+e5N9V3C6bwBeAC4n796kc86M4gJCdlVhiMTxIrJG5UHDMh+PJANf9heqORJbt1nrCbDwIlAZKjANIaVBbvw==}
+
+  rehype-image-caption@2.0.14:
+    resolution: {integrity: sha512-nW1eUkXWsaO8vec/zQE5s7u6CrUDQa0ojFZxCIP3PE0nzCt4SbQ8qVTWctnMETIYXp9zmHI13QqOcBFg74GNTw==}
 
   rehype-katex@7.0.1:
     resolution: {integrity: sha512-OiM2wrZ/wuhKkigASodFoo8wimG3H12LWQaH8qSPVJn9apWKFSH3YOCtbKpBorTVw/eI7cuT21XBbvwEswbIOA==}
@@ -3959,6 +3965,16 @@ snapshots:
       is-absolute-url: 4.0.1
       space-separated-tokens: 2.0.2
       unist-util-visit: 5.0.0
+
+  rehype-image-caption@2.0.14:
+    dependencies:
+      hast-util-is-element: 3.0.0
+      mdast-util-mdx-jsx: 3.2.0
+      rehype: 13.0.2
+      unified: 11.0.5
+      unist-util-visit: 5.0.0
+    transitivePeerDependencies:
+      - supports-color
 
   rehype-katex@7.0.1:
     dependencies:

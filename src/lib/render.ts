@@ -4,6 +4,7 @@ import { h } from 'hastscript'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeCustomEmoji from 'rehype-custom-emoji'
 import rehypeExternalLinks from 'rehype-external-links'
+import rehypeImageCaption from 'rehype-image-caption'
 import rehypeKatex from 'rehype-katex'
 import rehypeRaw from 'rehype-raw'
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize'
@@ -20,34 +21,29 @@ import { emojis } from './emojis'
 export function render(content: string) {
   return unified()
     .use(remarkParse, { fragment: true })
-    .use(remarkMath)
     .use(remarkGfm)
+    .use(remarkMath)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
     .use(rehypeSanitize, {
       ...defaultSchema,
       tagNames: [
-        ...defaultSchema.tagNames || [],
+        ...(defaultSchema.tagNames || []),
         'video',
-        'source'
+        'source',
+        'iframe',
       ],
       attributes: {
         ...defaultSchema.attributes,
-        video: [
-          'controls',
-          'width',
-          'height'
-        ],
-        source: [
-          'src',
-          'type'
-        ]
-      }
+        video: ['controls', 'width', 'height'],
+        source: ['src', 'type'],
+        iframe: ['src', 'frameborder', 'width', 'height'],
+      },
     })
     .use(rehypeShiki, {
       theme: 'vitesse-light',
       colorReplacements: {
-        '#ffffff': '#ffffff80'
+        '#ffffff': '#ffffff80',
       },
       transformers: [transformerNotationHighlight()],
     })
@@ -58,6 +54,7 @@ export function render(content: string) {
       content: [h('span.anchor', { ariaHidden: true })],
     })
     .use(rehypeToc)
+    .use(rehypeImageCaption)
     .use(rehypeCustomEmoji, { emojis })
     .use(rehypeStringify, { allowDangerousHtml: true })
     .use(rehypeExternalLinks, {
