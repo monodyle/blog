@@ -48,7 +48,7 @@ export function render(content: string) {
     .use(rehypeShiki, {
       theme: 'vitesse-light',
       colorReplacements: {
-        '#ffffff': '#ffffff80',
+        '#ffffff': 'transparent',
       },
       transformers: [transformerNotationHighlight()],
     })
