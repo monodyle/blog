@@ -9,9 +9,9 @@ tags: [ai, llm]
 
 Credit to [Deep Dive into LLMs like ChatGPT](https://youtu.be/7xTGNNLPyMI?si=Hc72uQelJ6Ckj8SA) by [Andrej Karpathy](https://x.com/karpathy)
 
-## How traning works?
+## How do they create tokens?
 
-- LLMs start with crawling data from the internet to build a massive dataset
+- Start with crawling data from the internet to build a massive dataset
 - Filter data with classifier to removing part of the data the low performance
 - Cleaned data will be compressed into something the machine usable
 
