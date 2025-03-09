@@ -173,6 +173,7 @@ export async function buildImage({
   textPaint.delete()
   titleFont.delete()
   ebGaramondTypeface.delete()
+  ibmPlexSansTypeface.delete()
 
   return pngData
 }
