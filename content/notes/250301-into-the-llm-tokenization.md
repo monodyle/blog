@@ -1,5 +1,8 @@
 ---
 title: Into the LLM Tokenization
+excerpt: How we actually talk with LLM?
+illustration: /assets/notes/into-the-llm-tokenization/illustration.png
+color: '#f1e4d1'
 date: Mar 01, 2025
 tags: [ai, llm]
 ---
@@ -39,7 +42,7 @@ So instead of feeding a raw text into model, it converted into tokens
 ![Chat under the hood](/assets/notes/into-the-llm-tokenization/tokenizer.png)
 *Chat under the hood, using [tiktokenizer.vercel.app](https://tiktokenizer.vercel.app/)*
 
-*Note*: Did you see asterisks (`*`) is recognized as 2 tokens? The first one have a space before.
+*Note*: Did you notice asterisks (`*`) is recognized as 2 tokens? The first one have a space before.
 
 ![LLM see](/assets/notes/into-the-llm-tokenization/llms.png)
 *What LLMs see*

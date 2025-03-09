@@ -89,15 +89,5 @@ const openGraphImage = new URL(openImagePath, Astro.url).toString();
     <Header />
     <slot />
     <Footer />
-
-    <script>
-      document.addEventListener('astro:page-load', () => {
-        const footnotes = document.querySelectorAll('[id^="user-content-user-content-"]')
-        for (const footnote of footnotes) {
-          const id = footnote.id.replace('user-content-user-content-', '')
-          footnote.id = `user-content-${id}`
-        }
-      })
-    </script>
   </body>
 </html>

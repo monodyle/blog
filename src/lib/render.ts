@@ -29,9 +29,12 @@ export function render(content: string) {
       ...defaultSchema,
       tagNames: [
         ...(defaultSchema.tagNames || []),
+        'small',
         'video',
         'source',
         'iframe',
+        'figure',
+        'figcaption',
       ],
       attributes: {
         ...defaultSchema.attributes,
@@ -39,6 +42,7 @@ export function render(content: string) {
         source: ['src', 'type'],
         iframe: ['src', 'frameborder', 'width', 'height'],
       },
+      clobberPrefix: '', // https://github.com/syntax-tree/hast-util-sanitize/issues/29#issuecomment-1781129045
     })
     .use(rehypeShiki, {
       theme: 'vitesse-light',
