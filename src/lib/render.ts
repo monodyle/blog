@@ -42,6 +42,7 @@ export function render(content: string) {
         video: ['controls', 'width', 'height'],
         source: ['src', 'type'],
         iframe: ['src', 'frameborder', 'width', 'height'],
+        '*': ['className'],
       },
       clobberPrefix: '', // https://github.com/syntax-tree/hast-util-sanitize/issues/29#issuecomment-1781129045
     })
