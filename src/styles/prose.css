@@ -850,6 +850,10 @@
   margin: 0;
 }
 
+.toc ol > li:last-child:has(a[href="#footnotes"]) {
+  display: none;
+}
+
 .toc ol > li::marker {
   display: inline-block;
   line-height: 1em;
