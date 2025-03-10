@@ -7,8 +7,6 @@ date: Mar 01, 2025
 tags: [ai, llm]
 ---
 
-Credit to [Deep Dive into LLMs like ChatGPT](https://youtu.be/7xTGNNLPyMI?si=Hc72uQelJ6Ckj8SA) by [Andrej Karpathy](https://x.com/karpathy)
-
 ## How do they create tokens?
 
 - Starts with crawling data from the internet to build a massive dataset
@@ -26,7 +24,7 @@ So instead of feeding a raw text into model, it converted into tokens
   height="480px"
 ></iframe>
 
-*Example:* FineWeb-Edu dataset[^1]
+*Example: FineWeb-Edu dataset[^1]*
 
 [^1]: https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu
 
@@ -58,3 +56,8 @@ Starts with individual tokens, it will repeatedly find most frequent pair of tok
 For example: "you" and "are" in dataset obviously appear together a lot, the BPE algorithm might create "you are" as one token instead of two.
 
 This method can reduces the number of tokens, speeding up training and inference.
+
+## References
+
+- [Deep Dive into LLMs like ChatGPT](https://youtu.be/7xTGNNLPyMI?si=Hc72uQelJ6Ckj8SA) by [Andrej Karpathy](https://x.com/karpathy)
+- [🍷 FineWeb: decanting the web for the finest text data at scale](https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1)

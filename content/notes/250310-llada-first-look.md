@@ -36,7 +36,7 @@ Similar with generate image in **Stable Diffusion**, the model use a parallel me
 
 [^1]: See "Table 3. Comparison in the Poem Completion Task." - https://arxiv.org/pdf/2502.09992
 
-## References:
+## References
 
 - [Andrej Karpathy tweet](https://x.com/karpathy/status/1894923254864978091)
 - [Large Language Diffusion Models project page](https://ml-gsai.github.io/LLaDA-demo/)
