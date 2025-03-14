@@ -38,6 +38,11 @@
   font-weight: 600;
 }
 
+.prose i,
+.prose em {
+  font-family: var(--font-newsreader);
+}
+
 .prose dfn {
   font-style: italic;
 }
