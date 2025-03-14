@@ -718,6 +718,14 @@
   border: 0;
 }
 
+.prose .shiki .shiki-filename {
+  margin-bottom: 0.25rem;
+}
+
+.prose .shiki .shiki-filename > span {
+  @apply inline-block bg-secondary px-1.5 py-0.5 rounded-md;
+}
+
 .prose .highlight {
   margin-bottom: 16px;
 }

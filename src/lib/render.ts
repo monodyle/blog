@@ -18,6 +18,7 @@ import remarkRehype from 'remark-rehype'
 import { unified } from 'unified'
 import { emojis } from './emojis'
 import rehypeGithubMention from './github-mention'
+import transformerFilename from './filename'
 
 export function render(content: string) {
   return unified()
@@ -25,6 +26,36 @@ export function render(content: string) {
     .use(remarkGfm)
     .use(remarkMath)
     .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeShiki, {
+      theme: 'vitesse-light',
+      colorReplacements: {
+        '#ffffff': 'transparent',
+      },
+      addLanguageClass: true,
+      transformers: [transformerNotationHighlight(), transformerFilename()],
+      parseMetaString: (str: string) => {
+        type MetaEntry = [string, string | boolean]
+
+        const parseEntry = (entry: string): MetaEntry | null => {
+          const [key, rawValue] = entry.split('=')
+          const isValidKey = /^[A-Z0-9]+$/i.test(key)
+          if (!isValidKey) return null
+
+          const value = rawValue
+            ? rawValue.replace(/^["'](.*)["']$/, '$1') || true
+            : true
+
+          return [key, value]
+        }
+
+        return Object.fromEntries(
+          str
+            .split(' ')
+            .map(parseEntry)
+            .filter((entry): entry is MetaEntry => entry !== null),
+        )
+      },
+    })
     .use(rehypeRaw)
     .use(rehypeSanitize, {
       ...defaultSchema,
@@ -43,15 +74,9 @@ export function render(content: string) {
         source: ['src', 'type'],
         iframe: ['src', 'frameborder', 'width', 'height'],
         '*': ['className'],
+        span: ['style'],
       },
       clobberPrefix: '', // https://github.com/syntax-tree/hast-util-sanitize/issues/29#issuecomment-1781129045
-    })
-    .use(rehypeShiki, {
-      theme: 'vitesse-light',
-      colorReplacements: {
-        '#ffffff': 'transparent',
-      },
-      transformers: [transformerNotationHighlight()],
     })
     .use(rehypeKatex)
     .use(rehypeSlug)
