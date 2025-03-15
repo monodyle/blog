@@ -1,0 +1,53 @@
+---
+import type { Post } from "src/lib/content";
+
+export type Props = {
+  posts: Array<Post>;
+};
+
+const { posts } = Astro.props;
+
+const groupedByYear = posts.reduce(
+  (acc, post) => {
+    const year = new Date(post.data.date).getFullYear();
+    acc[year] = [...(acc[year] || []), post];
+    return acc;
+  },
+  {} as Record<string, Array<Post>>,
+);
+
+const sortedByYear = Object.entries(groupedByYear).sort((a, b) => {
+  return (
+    new Date(b[1][0].data.date).getFullYear() -
+    new Date(a[1][0].data.date).getFullYear()
+  );
+});
+---
+
+<div class="space-y-4">
+  {
+    sortedByYear.map(([year, posts]) => (
+      <div class="space-y-4 relative pt-9">
+        <h3 class="text-4xl text-primary/10 font-instrument-serif absolute pointer-events-none user-select-none top-4 left-0">
+          {year}
+        </h3>
+        <ul class="space-y-4">
+          {posts.map((entry) => (
+            <li class="border-b border-border pb-4">
+              <a href={`/${entry.data.type}/${entry.slug}`} data-astro-prefetch>
+                <span class="text-subtle text-sm">{entry.data.date} —</span>
+                <span class="text-subtle text-sm">
+                  {entry.data.type}
+                  <span class="hidden md:inline"> —</span>
+                </span>
+                <span class="font-medium font-serif block md:inline">
+                  {entry.data.title}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
+</div>

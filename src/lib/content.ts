@@ -58,3 +58,5 @@ export async function getAllCollections() {
     return new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
   })
 }
+
+export type Post = Awaited<ReturnType<typeof getAllCollections>>[number]

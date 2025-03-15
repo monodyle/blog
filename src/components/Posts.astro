@@ -1,45 +1,23 @@
 ---
 import { getAllCollections } from "src/lib/content";
+import PostHighlight from "./PostHighlight.astro";
+import PostLatest from "./PostLatest.astro";
 
-const content = (await getAllCollections()).filter((entry) =>
-  Boolean(entry.data.illustration),
-);
+const allPosts = await getAllCollections();
+const content = allPosts.filter((entry) => Boolean(entry.data.illustration));
 ---
 
-<div class="space-y-4">
-  <div class="pl-2">
-    <h3 class="text-2xl font-instrument-serif"><em>Journey</em> Diary</h3>
-    <p class="text-subtle">The things I think</p>
+<div class="space-y-12">
+  <div class="space-y-4">
+    <div class="pl-2">
+      <h3 class="text-2xl font-instrument-serif"><em>Journey</em> Diary</h3>
+      <p class="text-subtle">The things I think</p>
+    </div>
+    <PostHighlight posts={content} />
   </div>
 
-  <div class="grid grid-cols-2 gap-4">
-    {
-      content.map((entry) => (
-        <a
-          class="px-6 py-5 rounded-2xl bg-secondary/50 block hover:no-underline group"
-          style={`background-color: ${entry.data.color}`}
-          href={`/${entry.data.type}/${entry.slug}`}
-          data-astro-prefetch
-        >
-          <div class="overflow-hidden rounded-2xl">
-            <img
-              src={entry.data.illustration}
-              alt={entry.data.title}
-              loading="lazy"
-              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-200"
-            />
-          </div>
-          <div class="flex gap-2">
-            <span class="text-subtle text-xs uppercase">{entry.data.date}</span>
-            <span class="text-subtle text-xs">—</span>
-            <span class="text-subtle text-xs uppercase">{entry.data.type}</span>
-          </div>
-          <h4 class="text-xl font-serif text-balance">{entry.data.title}</h4>
-          <p class="text-primary/60 text-sm text-balance">
-            {entry.data.excerpt}
-          </p>
-        </a>
-      ))
-    }
+  <div class="space-y-4">
+    <h3 class="text-2xl font-instrument-serif">All Posts</h3>
+    <PostLatest posts={allPosts} />
   </div>
 </div>
