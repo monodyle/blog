@@ -1,5 +1,5 @@
 ---
-title: JavaScript sort callback
+title: JavaScript Array.prototype.sort callback
 date: Aug 27, 2023
 tags: [javascript]
 ---
