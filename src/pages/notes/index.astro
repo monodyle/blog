@@ -1,8 +1,18 @@
 ---
+import List from "src/components/List.astro";
 import Layout from "../../layouts/Layout.astro";
-import { getNotesCollection } from "src/lib/content";
+import { getNotesCollection, type Post } from "src/lib/content";
 
 const content = await getNotesCollection();
+const groupByTag = content.reduce(
+  (acc, post) => {
+    for (const tag of post.data.tags || []) {
+      acc[tag] = [...(acc[tag] || []), post];
+    }
+    return acc;
+  },
+  {} as Record<string, Array<Post>>,
+);
 ---
 
 <Layout title="monody's notes">
@@ -14,18 +24,23 @@ const content = await getNotesCollection();
       I'd like a <em>double espresso</em>, please.
     </p>
     <div class="pt-12">
-      <ul class="space-y-4">
-        {
-          content.map((entry) => (
-            <li class="border-b border-border pb-4">
-              <a href={`/notes/${entry.slug}`} data-astro-prefetch>
-                <span class="text-subtle text-sm">{entry.data.date} —</span>
-                <span class="font-medium font-serif">{entry.data.title}</span>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+      <List posts={content} />
+    </div>
+    <div class="pt-12 space-y-4">
+      <h2 class="text-2xl font-instrument-serif">Posts by Categories</h2>
+      {
+        Object.entries(groupByTag).map(([tag, posts]) => (
+          <div class="space-y-4">
+            <h3
+              class="text-2xl text-primary font-instrument-serif"
+              id={tag}
+            >
+              #{tag}
+            </h3>
+            <List posts={posts} />
+          </div>
+        ))
+      }
     </div>
   </div>
 </Layout>

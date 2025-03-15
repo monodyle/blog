@@ -1,0 +1,23 @@
+---
+import type { Post } from 'src/lib/content';
+
+
+export type Props = {
+  posts: Array<Post>;
+};
+
+const { posts } = Astro.props;
+---
+
+<ul class="space-y-4">
+  {
+    posts.map((entry) => (
+      <li class="border-b border-border pb-4">
+        <a href={`/${entry.data.type}/${entry.slug}`} data-astro-prefetch>
+          <span class="text-subtle text-sm">{entry.data.date} —</span>
+          <span class="font-medium font-serif">{entry.data.title}</span>
+        </a>
+      </li>
+    ))
+  }
+</ul>
