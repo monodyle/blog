@@ -35,7 +35,7 @@ The softmax function ensure that each $\sigma(z_i)$ value is between $(0,1)$.
 
 ### The Temperature
 
-[Temperature]() controls the unpredictability of a LLMs' output.
+Temperature controls the unpredictability of a LLMs' output.
 
 With a higher temperature, model's ouput get more creative and less predictable, as it amplifies the chances of selecting less protable tokens while reducing the chances for the more likely ones.
 
