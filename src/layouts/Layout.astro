@@ -81,12 +81,16 @@ const openGraphImage = new URL(openImagePath, Astro.url).toString();
       href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap"
       rel="stylesheet"
     />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css"
       integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib"
       crossorigin="anonymous"
     />
+
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
     <ClientRouter />
   </head>
   <body class="min-h-screen bg-base text-primary font-sans">
