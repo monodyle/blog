@@ -1,6 +1,8 @@
 ---
-title: LLM Hyperparameters — Understanding the Randomness
+title: LLM — Understanding the Randomness
 excerpt: Is all of this just a concidence?
+illustration: /assets/notes/llm-understanding-randomness/illustration.png
+color: '#c7d6d4'
 date: Mar 16, 2025
 tags: [ai, llm]
 ---
