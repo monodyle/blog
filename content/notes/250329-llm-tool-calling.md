@@ -47,4 +47,4 @@ Thanks @github.com/huytd for sharing this
 
 ## Edit
 
-- Mar 31, 2025: Clarify that LLM can't directly calling tools or external functions
+- Mar 31, 2025: Clarify that LLM can't directly calling tools or external functions, thanks @github.com/ledongthuc and @github.com/huytd for pointing this out
