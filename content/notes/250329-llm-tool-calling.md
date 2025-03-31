@@ -18,7 +18,7 @@ LLMs can't directly execute functions. However, there are two approaches that he
 
 System prompts using in Ollama/LMStudio example:
 
-```md file="System Prompts"
+```md
 For each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:
 <tool_call>
 {"name": <function-name>, "arguments": <args-json-object>}
