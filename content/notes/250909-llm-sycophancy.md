@@ -17,9 +17,7 @@ I wasn't surprised when I reading this. The first time @github.com/thien-do sent
 >
 > *From [**AI: First New UI Paradigm in 60 Years**](https://www.nngroup.com/articles/ai-paradigm/) by Jakob Nielsen*
 
-A common characteristic among many AI models is a tendency toward sycophantic behavior.
-
-A common characteristic among many AI models is a tendency toward sycophantic behavior. For example, earlier version of Anthropic Claude's models, their frequent use of agreeable phrases like "You're absolutely right"[^1][^2][^3] often regardless of the user's input validity. This eagerness to please, even in response to absurd statements, is not an only issue with Claude, it remains a prevalent trait in many others AI models today.
+A common characteristic among many AI models is a tendency toward sycophantic behavior. For example, earlier version of Anthropic Claude's models, their frequent use of agreeable phrases like "*You're absolutely right*"[^1][^2][^3] often regardless of the user's input validity. This eagerness to please, even in response to absurd statements, is not an only issue with Claude, it remains a prevalent trait in many others AI models today.
 
 [^1]: https://www.reddit.com/r/ClaudeAI/comments/152b51r/you_are_absolutely_right/
 [^2]: https://github.com/anthropics/claude-code/issues/3382
