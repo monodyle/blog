@@ -23,6 +23,9 @@ A common characteristic among many AI models is a tendency toward sycophantic be
 [^2]: https://github.com/anthropics/claude-code/issues/3382
 [^3]: https://news.ycombinator.com/item?id=44885398
 
+![You're absolutely right](/assets/notes/llm-sycophancy/youre-absolutely-right.png)
+***You're absolutely right** being a joke - [source](https://github.com/anthropics/claude-code/issues/3382)*
+
 When reading AI-generated content, focus on the input prompt rather than blindly trusting the output. When someone use AI-generated content to convince you of something, be skepticism.
 
 Fortunately, many AI companies and researchers are now prioritizing responsible model training practices. Instead of relying on system instructions to constrain AI behavior.
