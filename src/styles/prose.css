@@ -316,7 +316,7 @@
 .prose blockquote {
   margin: 0;
   padding: 0.5em 2em;
-  font-size: 1.1em;
+  font-size: 0.9em;
   color: var(--color-primary);
   border-left: 0.25em solid var(--color-border);
 }
