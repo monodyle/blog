@@ -100,6 +100,7 @@
 .prose figure figcaption {
   letter-spacing: -0.004em;
   margin-top: 0.25rem;
+  padding-left: 0.25rem;
   font-size: 12.5px;
   line-height: 1.3;
 }
