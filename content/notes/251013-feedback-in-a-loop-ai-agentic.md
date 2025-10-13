@@ -30,6 +30,7 @@ This is quite reasonably could be to say: "*That's it? A for loop? Did you just 
 But it turns out, that wrapping our raw LLM in the code you wrote on your first day of class somehow unlocks its final form.
 
 In the Anthropic's article [Building effective agents][effective-agents] mention about the Evaluator-optimizer workflow:
+
 [effective-agents]: https://www.anthropic.com/engineering/building-effective-agents
 
 > In the evaluator-optimizer workflow, one LLM call generates a response while another provides evaluation and feedback in a loop.
