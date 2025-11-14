@@ -49,17 +49,17 @@ def agent(llm, task, max_iters=5):
     """
 
     def score(output):
-        score_output=llm(
+        i=llm(
             f"Score the following answer from 0–10 for quality and correctness:\n{output}\n"
             "Return only the number."
         )
         try:
-            return float(score_text.strip())
+            return float(score_output.strip())
         except ValueError:
             return 0.0
 
     draft = llm(f"Task:\n{task}\nReturn: your best first answer.")
-    prev_score = score_output(draft)
+    prev_score = score(draft)
 
     for _ in range(max_iters):
         # critique
