@@ -1,6 +1,6 @@
 ---
 title: Feedback in a loop — AI Agentic
-excerpt: The personality behavior of AI
+excerpt: Oh baby i'm stuck in the loop~
 date: Oct 13, 2025
 tags: [ai, agent]
 ---
