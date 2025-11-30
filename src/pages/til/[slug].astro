@@ -29,10 +29,19 @@ const content = await render(entry.body ?? '');
       <a href="/til" data-astro-prefetch class="text-primary"> i learned </a>
       ...
     </div>
-    <h1 class="text-4xl font-semibold mb-5 font-serif text-balance">
+    <h1 class="text-4xl font-semibold font-serif text-balance mb-2">
       {entry.data.title}
     </h1>
-    <article class="prose">
+    <div class="flex items-center gap-4">
+      {
+        entry.data.tags?.map((tag: string) => (
+          <small class="font-medium font-mono uppercase text-[10px] text-subtle">
+            {tag}
+          </small>
+        ))
+      }
+    </div>
+    <article class="prose pt-5">
       {content}
     </article>
   </div>
