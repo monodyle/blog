@@ -92,9 +92,6 @@ importers:
       remark-rehype:
         specifier: ^11.1.2
         version: 11.1.2
-      remark-youtube:
-        specifier: ^1.3.3
-        version: 1.3.3(remark-rehype@11.1.2)
       shiki:
         specifier: ^3.15.0
         version: 3.15.0
@@ -107,9 +104,6 @@ importers:
       unified:
         specifier: ^11.0.5
         version: 11.0.5
-      unist-util-visit:
-        specifier: ^5.0.0
-        version: 5.0.0
 
 packages:
 
@@ -1758,12 +1752,6 @@ packages:
 
   remark-stringify@11.0.0:
     resolution: {integrity: sha512-1OSmLd3awB/t8qdoEOMazZkNsfVTeY4fTsgzcQFdXNq8ToTN4ZGwrMnlda4K6smTFKD+GRV6O48i6Z4iKgPPpw==}
-
-  remark-youtube@1.3.3:
-    resolution: {integrity: sha512-QS9k5zBk4hC3ZXWb5g7CNadBDR8x8W6deU4Teb3vkYs9QQztGc0YGjewlu8Sgx6d85rpXLehKAnNskAuHsroZA==}
-    engines: {node: '>= 18'}
-    peerDependencies:
-      remark-rehype: ^11.1.0
 
   restructure@3.0.2:
     resolution: {integrity: sha512-gSfoiOEA0VPE6Tukkrr7I0RBdE0s7H1eFCDBk05l1KIQT1UIKNc5JZy6jdyW6eYH3aR3g5b3PuL77rq0hvwtAw==}
@@ -4222,11 +4210,6 @@ snapshots:
       '@types/mdast': 4.0.4
       mdast-util-to-markdown: 2.1.2
       unified: 11.0.5
-
-  remark-youtube@1.3.3(remark-rehype@11.1.2):
-    dependencies:
-      remark-rehype: 11.1.2
-      unist-util-visit: 5.0.0
 
   restructure@3.0.2: {}
 
