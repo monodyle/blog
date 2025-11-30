@@ -13,27 +13,25 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const content = await render(entry.body ?? '');
+
+const thumbnail = entry.data.image ?? `/og/blog/${entry.slug}`;
 ---
 
 <Layout
   title={`${entry.data.title} — monody's blog`}
   description={entry.data.excerpt ?? entry.body?.slice(0, 150)}
-  thumbnail={entry.data.image}
+  thumbnail={thumbnail}
 >
   <div class="container px-3 py-24">
     <div class="px-6 mb-12 text-center space-y-2">
-      {
-        entry.data.image && (
-          <div class="relative -mx-9 mb-12 rounded-2xl w-[calc(100%+4.5rem)] pt-[52.5%] overflow-hidden">
-            <img
-              src={entry.data.image}
-              alt={entry.data.title}
-              loading="lazy"
-              class="absolute inset-0 w-full h-full object-cover object-center"
-            />
-          </div>
-        )
-      }
+      <div class="relative -mx-9 mb-12 rounded-2xl w-[calc(100%+4.5rem)] pt-[52.5%] overflow-hidden">
+        <img
+          src={thumbnail}
+          alt={entry.data.title}
+          loading="lazy"
+          class="absolute inset-0 w-full h-full object-cover object-center"
+        />
+      </div>
       <small class="text-subtle">
         {
           new Intl.DateTimeFormat("en-US", {
