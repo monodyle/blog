@@ -17,8 +17,9 @@ import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import { unified } from 'unified'
 import { emojis } from './emojis'
-import rehypeGithubMention from './github-mention'
 import transformerFilename from './filename'
+import rehypeGithubMention from './github-mention'
+import rehypeYoutubeEmbed from './youtube-embed'
 
 export function render(content: string) {
   return unified()
@@ -88,6 +89,7 @@ export function render(content: string) {
     .use(rehypeImageCaption)
     .use(rehypeCustomEmoji, { emojis })
     .use(rehypeGithubMention)
+    .use(rehypeYoutubeEmbed)
     .use(rehypeStringify, { allowDangerousHtml: true })
     .use(rehypeExternalLinks, {
       target: '_blank',

@@ -8,19 +8,18 @@
     "preview": "astro preview",
     "astro": "astro"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@astrojs/mdx": "^4.3.11",
+    "@astrojs/mdx": "4.3.12",
     "@astrojs/sitemap": "^3.6.0",
+    "@biomejs/biome": "2.3.6",
     "@shikijs/rehype": "^3.15.0",
     "@shikijs/transformers": "^3.15.0",
-    "@biomejs/biome": "2.3.6",
     "@shikijs/types": "^3.15.0",
     "@tailwindcss/vite": "^4.1.17",
     "@types/hast": "^3.0.4",
     "@types/node": "^22.19.1",
     "@types/three": "0.181.0",
-    "astro": "^5.15.9",
+    "astro": "5.16.3",
     "canvaskit-wasm": "^0.40.0",
     "hast-util-find-and-replace": "^5.0.1",
     "hastscript": "^9.0.1",
@@ -42,5 +41,6 @@
     "tailwindcss": "^4.1.17",
     "three": "^0.181.1",
     "unified": "^11.0.5"
-  }
+  },
+  "packageManager": "pnpm@10.24.0"
 }
