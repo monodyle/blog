@@ -21,7 +21,7 @@ const { posts } = Astro.props;
           <img
             src={entry.data.illustration}
             alt={entry.data.title}
-            loading="lazy"
+            loading="eager"
             class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-200"
           />
         </div>
