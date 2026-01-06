@@ -16,7 +16,7 @@ const blog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './content/blog' }),
   schema: _baseSchema
     .extend({
-      public: z.boolean().optional(),
+      public: z.boolean().default(true),
     })
     .transform((data) => ({
       ...data,
@@ -26,7 +26,9 @@ const blog = defineCollection({
 
 const til = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './content/til' }),
-  schema: _baseSchema.transform((data) => ({
+  schema: _baseSchema.extend({
+    public: z.boolean().default(true),
+  }).transform((data) => ({
     ...data,
     type: 'til',
   })),
@@ -34,7 +36,9 @@ const til = defineCollection({
 
 const notes = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './content/notes' }),
-  schema: _baseSchema.transform((data) => ({
+  schema: _baseSchema.extend({
+    public: z.boolean().default(true),
+  }).transform((data) => ({
     ...data,
     type: 'notes',
   })),

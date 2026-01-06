@@ -3,6 +3,7 @@ title: Stay aware of AI generated content
 excerpt: The Matrix is ​​at its most insane patch right now
 date: Nov 30, 2025
 tags: [ai]
+public: false
 ---
 
 On November 18, [Gemini 3 was released][gemini-3-released], and just two days later

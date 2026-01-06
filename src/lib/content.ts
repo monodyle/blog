@@ -22,6 +22,7 @@ export async function getBlogCollection() {
 
 export async function getTilCollection() {
   const content = (await getCollection('til'))
+    .filter((entry) => entry.data.public !== false)
     .map((entry) => ({
       ...entry,
       slug: entry.filePath?.split('/').pop()?.split('.')[0],
@@ -36,6 +37,7 @@ export async function getTilCollection() {
 
 export async function getNotesCollection() {
   const content = (await getCollection('notes'))
+    .filter((entry) => entry.data.public !== false)
     .map((entry) => ({
       ...entry,
       slug: entry.filePath?.split('/').pop()?.split('.')[0],
