@@ -35,11 +35,11 @@ const sortedByYear = Object.entries(groupedByYear).sort((a, b) => {
           {posts.map((entry) => (
             <li class="border-b border-border pb-4">
               <a href={`/${entry.data.type}/${entry.slug}`} data-astro-prefetch>
-                <span class="text-subtle text-sm">{entry.data.date} —</span>
+                <span class="text-subtle text-sm">{entry.data.date} —</span>{' '}
                 <span class="text-subtle text-sm">
                   {entry.data.type}
                   <span class="hidden md:inline"> —</span>
-                </span>
+                </span>{' '}
                 <span class="font-medium font-serif block md:inline">
                   {entry.data.title}
                 </span>

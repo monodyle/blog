@@ -14,7 +14,7 @@ const { posts } = Astro.props;
     posts.map((entry) => (
       <li class="border-b border-border pb-4">
         <a href={`/${entry.data.type}/${entry.slug}`} data-astro-prefetch>
-          <span class="text-subtle text-sm">{entry.data.date} —</span>
+          <span class="text-subtle text-sm">{entry.data.date} —</span>{' '}
           <span class="font-medium font-serif">{entry.data.title}</span>
         </a>
       </li>
